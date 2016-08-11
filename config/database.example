@@ -1,0 +1,13 @@
+general: &general
+  adapter: postgresql
+  pool: 5
+  host: localhost
+  min_messages: WARNING
+
+development:
+  <<: *general
+  database: hackathon_dev
+
+production:
+  <<: *general
+  database: hackathon
