@@ -1,2 +1,57 @@
+@import 'common/variables'
+@import 'bootstrap'
+
 body
-  background: #CCC
+  font-family: Roboto, sans-serif
+
+p, span, i, a
+  color: #FFF
+
+#main-wrapper
+
+.row
+  margin: 0
+
+.section
+  padding: 40px 60px
+
+  .image-container
+    @extend .col-md-4
+    text-align: center
+
+  .message-container
+    @extend .col-md-8
+    margin: 0 0 3% 0
+    p
+      font-size: 18px
+      font-weight: 300
+      letter-spacing: 2px
+      text-align: right
+      span
+        color: $highlight-font
+
+.section-wrapper
+  margin: 0 auto
+  max-width: 1160px
+
+.row-wrapper
+  @extend .row
+  margin: 0
+
+.main-btn
+  background: $bg-button
+  color: $color-button
+  font-weight: 300
+  &:hover
+    background: $bg-button-hover
+    color: $color-button
+    text-decoration: none
+
+.main-btn-img
+  @extend .main-btn
+  span
+    margin: 0 10px 0 0
+
+@media (max-width: 1053px)
+  .section .message-container p
+    text-align: center

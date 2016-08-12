@@ -1,0 +1,51 @@
+@import 'common/variables'
+
+#welcome
+  background: image_url('welcome_image.jpg')
+  background-size: cover
+  padding: 100px 60px 30px
+
+  .hack-container
+    img
+      height: 48px
+      width: 430px
+
+    a
+      float: right
+      font-size: 20px
+      padding: 10px 50px
+
+  .logo-container
+    margin-top: 15px
+    position: relative
+
+    #date
+      display: inline-block
+      font-size: 45px
+      margin-left: 15px
+      vertical-align: top
+
+    #slogan
+      display: inline-block
+      font-size: 20px
+      left: 100px
+      margin: 0
+      position: absolute
+      top: 55px
+      span
+        color: $gray-font
+      i
+        color: $highlight-font
+
+  .commit-container
+    margin-top: 400px
+    p
+      margin: 0
+      &:first-of-type
+        font-size: 25px
+      &:last-of-type
+        font-size: 16px
+        color: $gray-font
+
+//#welcome
+//  @media (max-width: 992px)
