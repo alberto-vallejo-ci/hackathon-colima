@@ -1,0 +1,10 @@
+#menu.section
+  .section-wrapper
+    .row-wrapper
+      = image_tag 'logohck.png'
+      #buttons-container
+        = link_to 'Registro', '#', class: 'main-btn'
+        = link_to '//facebook.com/HackColima', target: '_blank', class: 'social facebook' do
+          = fa_icon "facebook-official"
+        = link_to '//twitter.com/HackColima', target: '_blank', class: 'social' do
+          = fa_icon "twitter"
