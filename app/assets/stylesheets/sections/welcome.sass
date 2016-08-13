@@ -1,41 +1,54 @@
 @import 'common/variables'
+@import 'bootstrap'
 
 #welcome
-  background: image_url('welcome_image.jpg')
+  // background: image_url('welcome_image.jpg')
+  background: #0d0d1f
   background-size: cover
   padding: 100px 60px 30px
 
-  .hack-container
-    img
-      height: 48px
-      width: 430px
+  #hack-row
+    .image-container
+      @extend .col-md-5
+      padding: 0
+      text-align: left
 
-    a
-      float: right
-      font-size: 20px
-      padding: 10px 50px
+      img
+        height: 48px
+        width: 430px
 
-  .logo-container
+    .button-container
+      @extend .col-md-2, .col-md-offset-5
+      display: flex
+      padding: 0
+      text-align: right
+
+      a
+        font-size: 20px
+        padding: 10px 50px
+
+  #logo-row
     margin-top: 15px
-    position: relative
 
-    #date
-      display: inline-block
-      font-size: 45px
+    .logo-container, .date-container
+      float: left
+
+    .date-container
       margin-left: 15px
-      vertical-align: top
+      #date
+        display: inline-block
+        font-size: 45px
+        vertical-align: top
 
-    #slogan
-      display: inline-block
-      font-size: 20px
-      left: 100px
-      margin: 0
-      position: absolute
-      top: 55px
-      span
-        color: $gray-font
-      i
-        color: $highlight-font
+      #slogan
+        display: inline-block
+        font-size: 20px
+        margin: 0
+        span
+          color: $gray-font
+        i
+          color: $highlight-font
+          margin: 0 7px
 
   .commit-container
     margin-top: 400px
@@ -47,5 +60,21 @@
         font-size: 16px
         color: $gray-font
 
-//#welcome
-//  @media (max-width: 992px)
+#welcome
+  @media (max-width: 991px)
+    #hack-row
+      .image-container
+        text-align: center
+
+      .button-container
+        margin-top: 15px
+        a
+          margin: 0 auto
+
+    #logo-row
+      display: table
+      margin: 40px auto 0
+      text-align: center
+
+    .commit-container
+      margin-top: 360px
