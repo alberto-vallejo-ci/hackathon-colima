@@ -1,0 +1,35 @@
+#projects-image.section.paralax
+  .section-wrapper
+    p= 'Proyectos'
+    p#slogan
+      span= 'Tecnología'
+      = fa_icon "plus"
+      span= 'Planeta'
+
+#projects.section
+  .section-wrapper
+    .row-wrapper
+      .image-container
+        .group
+        p= 'Nombre'
+      .image-container
+        .group
+        p= 'Nombre'
+      .image-container
+        .group
+        p= 'Nombre'
+      .image-container
+        .group
+        p= 'Nombre'
+    .row-wrapper
+      .image-container
+        .group
+        p= 'Nombre'
+      .image-container
+        .group
+        p= 'Nombre'
+      .form-container
+        form
+          = text_field_tag :name, '', placeholder: 'Nombre'
+          = text_area_tag :description, '', placeholder: 'Descripción'
+          = submit_tag :save, class: 'main-btn', value: 'Registrar'
