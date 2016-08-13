@@ -24,7 +24,7 @@ Devise.setup do |config|
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
-  require 'devise/orm/active_record'
+  require "devise/orm/active_record"
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -251,7 +251,8 @@ Devise.setup do |config|
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
-  # change the failure app, you can configure them inside the config.warden block.
+  # change the failure app, you can configure them inside the
+  # config.warden block.
   #
   # config.warden do |manager|
   #   manager.intercept_401 = false
