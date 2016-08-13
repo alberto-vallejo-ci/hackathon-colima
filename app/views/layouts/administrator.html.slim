@@ -1,11 +1,13 @@
 doctype html
 html
   head
-    title HackColima
+    title HackColima - Admin
     link href='//fonts.googleapis.com/css?family=Roboto:100,300,500' media='screen' rel='stylesheet'
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
   body
+    nav
+      span= link_to 'Salir', destroy_admin_session_path, method: :delete
     = yield

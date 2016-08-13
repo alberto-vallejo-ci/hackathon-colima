@@ -11,6 +11,8 @@ gem 'pg'
 gem 'uglifier'
 gem 'sass-rails'
 gem 'slim'
+gem 'devise'
+gem 'figaro'
 
 group :development, :test do
   gem 'pry'
