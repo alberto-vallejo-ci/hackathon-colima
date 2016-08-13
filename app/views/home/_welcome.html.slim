@@ -1,18 +1,24 @@
 #welcome.section
   .section-wrapper
-    .row-wrapper
-      .hack-container
+    #hack-row.row-wrapper
+      .image-container
         = image_tag 'hackcolima.png'
+      .button-container
         = link_to 'Registro', '#', class: 'main-btn'
 
+    #logo-row.row-wrapper
       .logo-container
         = image_tag 'logohck.png'
-        span#date= 'Octubre 2016'
-        p#slogan
-          span= 'Tecnología'
-          = fa_icon "plus"
-          span= 'Planeta'
+      .date-container
+        .row-wrapper
+          span#date= 'Octubre 2016'
+        .row-wrapper
+          p#slogan
+            span= 'Tecnología'
+            = fa_icon "plus"
+            span= 'Planeta'
 
+    #commit-row.row-wrapper
       .commit-container
         p Logo
         p coordinado por Commit
