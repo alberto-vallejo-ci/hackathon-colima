@@ -1,0 +1,54 @@
+#projects-image
+  p
+    margin: 0
+
+    &:first-of-type
+      font-size: 3em
+      font-weight: 500
+    &#slogan
+      font-size: 1.75em
+      i
+        color: $highlight-font
+        margin: 0 5px
+
+#projects
+  .row-wrapper:first-of-type
+    margin-bottom: 50px
+
+  .image-container
+    @extend .col-md-3
+    padding: 0
+
+    p
+      color: $gray-font-strong
+      margin: 0
+      text-align: left
+
+    .group
+      background: #CCC
+      border: solid 1px #5d5d5d
+      height: 200px
+      width: 250px
+
+  .form-container
+    @extend .col-md-6
+    padding-right: 35px
+
+    input[type=text], textarea
+      border: solid 1px $gray-font
+      padding: 0 10px
+      width: 100%
+
+    input[type=text]
+      font-size: 2em
+      height: 50px
+
+    textarea
+      height: 80px
+      margin-top: 20px
+
+    input[type=submit]
+      border: none
+      float: right
+      margin-top: 10px
+      padding: 10px 50px
