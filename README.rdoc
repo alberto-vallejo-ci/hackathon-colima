@@ -4,3 +4,11 @@
 
 Duplicate `config/application.yml.example`, and rename the new file to
 `config/application.yml`. Change variables accordingly.
+
+
+== Assets
+
+We are using babel in order to use ES6, so please use .es6 extension instead of
+.js in order for sprockets to compile accordingly.
+
+.babelrc file contains the presents.
