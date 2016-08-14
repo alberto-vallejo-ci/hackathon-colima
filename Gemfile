@@ -13,6 +13,8 @@ gem "sass-rails"
 gem "slim-rails"
 gem "devise"
 gem "figaro"
+gem "sprockets"
+gem "sprockets-es6"
 
 group :development, :test do
   gem "pry"

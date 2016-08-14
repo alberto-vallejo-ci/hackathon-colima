@@ -7,7 +7,7 @@
   .section-wrapper
     .row-wrapper
       .map-container
-      .form-container
+      .form-container(ng-controller='ContactFormController')
         = form_for :contact, url: contact_path, method: :post, remote: true do |form|
           = form.text_field :name, placeholder: 'Nombre'
           = form.text_field :email, placeholder: 'Email'

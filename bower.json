@@ -1,0 +1,21 @@
+{
+  "name": "hackathon-colima",
+  "homepage": "https://github.com/alberto-vallejo-ci/hackathon-colima",
+  "authors": [
+    "Daniel Gaytan <dgaytan6@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.5.8"
+  }
+}
