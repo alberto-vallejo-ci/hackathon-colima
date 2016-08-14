@@ -1,5 +1,5 @@
 class ContactMailer < ApplicationMailer
-  default to: "contacto@hackcolima.com", from: "contacto@hackcolima.com"
+  default to: "contacto@hackcolima.com"
 
   def homepage_email(name:, email:, text:)
     @name = name

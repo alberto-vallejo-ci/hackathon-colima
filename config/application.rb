@@ -29,7 +29,7 @@ module HackathonColima
       port:                 587,
       domain:               "hackcolima.com",
       user_name:            "postmaster@hackcolima.com",
-      password:             ENV['mailgun_smtp_password'],
+      password:             ENV["mailgun_smtp_password"],
       authentication:       :plain,
       enable_starttls_auto: true
     }
