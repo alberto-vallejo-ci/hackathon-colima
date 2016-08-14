@@ -8,8 +8,8 @@
     .row-wrapper
       .map-container
       .form-container
-        form
-          = text_field_tag :name, '', placeholder: 'Nombre'
-          = text_field_tag :email, '', placeholder: 'Email'
-          = text_area_tag :description, '', placeholder: 'Descripción'
-          = submit_tag :save, class: 'main-btn', value: 'Enviar'
+        = form_for :contact, url: contact_path, method: :post, remote: true do |form|
+          = form.text_field :name, placeholder: 'Nombre'
+          = form.text_field :email, placeholder: 'Email'
+          = form.text_area :description, placeholder: 'Descripción'
+          = form.submit :save, class: 'main-btn', value: 'Enviar'
