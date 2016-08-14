@@ -23,6 +23,6 @@ $ ->
 
     setMap: ->
       element = $(@map_area).get(0)
-      new google.maps.Map(element, @defultMapOptions());
+      new google.maps.Map(element, @defultMapOptions())
 
   new HackColima.Map
