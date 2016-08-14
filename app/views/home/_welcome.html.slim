@@ -13,10 +13,7 @@
         .row-wrapper
           span#date= 'Octubre 2016'
         .row-wrapper
-          p#slogan
-            span= 'Tecnología'
-            = fa_icon "plus"
-            span= 'Planeta'
+          = render partial: 'slogan', locals: { first_value: 'Tecnología', second_value: 'Planeta' }
 
     #commit-row.row-wrapper
       .commit-container

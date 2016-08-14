@@ -17,6 +17,17 @@ p, span, i
     background-position-y: 220px
     padding: 45px 60px
 
+    p
+      margin: 0
+      &:first-of-type
+        font-size: 3em
+        font-weight: 500
+      &.slogan
+        font-size: 1.75em
+        i
+          color: $highlight-font
+          margin: 0 5px
+
   .image-container
     @extend .col-md-4
     text-align: center

@@ -1,0 +1,15 @@
+#contact-image.section.paralax
+  .section-wrapper
+    p= 'Contacto'
+    = render partial: 'slogan', locals: { first_value: 'Preguntas', second_value: 'Respuestas' }
+
+#contact.section
+  .section-wrapper
+    .row-wrapper
+      .map-container
+      .form-container
+        form
+          = text_field_tag :name, '', placeholder: 'Nombre'
+          = text_field_tag :email, '', placeholder: 'Email'
+          = text_area_tag :description, '', placeholder: 'Descripción'
+          = submit_tag :save, class: 'main-btn', value: 'Enviar'
