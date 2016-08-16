@@ -2,10 +2,10 @@
 
 # MUST HAVE keys
 # devise_secret: '0033d2a858c2f790078c6f0881a2522683d547a1b0843c2f8cc509fb63247f8d98163ba368e692e6fd0a6b104873a302ab874958d9c9ccb23d89634e7ea7d1ad'
-# mailgun_smtp_password: 'mailgun-password-here'
 
 # PRODUCTION MUST HAVE keys
 # SECRET_KEY_BASE:
+# mailgun_smtp_password: 'mailgun-password-here'
 
 # SHOULD HAVE keys
 # BUNDLE_GEMFILE:
