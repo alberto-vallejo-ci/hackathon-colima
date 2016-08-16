@@ -9,7 +9,7 @@
       .map-container
       .form-container(ng-controller='ContactFormController')
         form(novalidate)
-          input(name='contact[name]' type='text' placeholder='Nombre')
-          input(name='contact[email]' type='text' placeholder='Correo electrónico')
-          textarea(name='contact[description]' placeholder='Descripción')
+          input(ng-model='contact.name' type='text' placeholder='Nombre')
+          input(ng-model='contact.email' type='text' placeholder='Correo electrónico')
+          textarea(ng-model='contact.description' placeholder='Descripción')
           input.main-btn(type="submit" name="commit" value="Enviar" ng-click="onSubmit()")

@@ -6,8 +6,10 @@ class ContactsController < ApplicationController
         email: contact_params[:email],
         text: contact_params[:description]
       ).deliver_now
+      head :ok
+    else
+      head :bad_request
     end
-    head :ok
   end
 
   private

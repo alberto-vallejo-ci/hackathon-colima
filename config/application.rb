@@ -26,17 +26,6 @@ module HackathonColima
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = {
-      address:              "smtp.mailgun.org",
-      port:                 587,
-      domain:               "hackcolima.com",
-      user_name:            "postmaster@hackcolima.com",
-      password:             ENV["mailgun_smtp_password"],
-      authentication:       :plain,
-      enable_starttls_auto: true
-    }
-
     config.generators do |g|
       g.orm             :active_record
       g.template_engine :slim
