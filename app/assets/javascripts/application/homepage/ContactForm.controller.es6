@@ -1,4 +1,7 @@
-application.controller('ContactFormController', function($scope){
+application.controller('ContactFormController', function($scope, FlashMessage){
     var vm = $scope;
-    console.log(vm);
+
+    vm.onSubmit = function(){
+        FlashMessage.create({ text: 'This is text', type: 'success'});
+    }
 })

@@ -8,8 +8,8 @@
     .row-wrapper
       .map-container
       .form-container(ng-controller='ContactFormController')
-        = form_for :contact, url: contact_path, method: :post, remote: true do |form|
-          = form.text_field :name, placeholder: 'Nombre'
-          = form.text_field :email, placeholder: 'Email'
-          = form.text_area :description, placeholder: 'Descripción'
-          = form.submit :save, class: 'main-btn', value: 'Enviar'
+        form(novalidate)
+          input(name='contact[name]' type='text' placeholder='Nombre')
+          input(name='contact[email]' type='text' placeholder='Correo electrónico')
+          textarea(name='contact[description]' placeholder='Descripción')
+          input.main-btn(type="submit" name="commit" value="Enviar" ng-click="onSubmit()")

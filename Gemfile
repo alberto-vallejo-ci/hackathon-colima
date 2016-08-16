@@ -15,6 +15,7 @@ gem "devise"
 gem "figaro"
 gem "sprockets"
 gem "sprockets-es6"
+gem "angular-rails-templates"
 
 group :development, :test do
   gem "pry"

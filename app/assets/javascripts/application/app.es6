@@ -1,1 +1,1 @@
-var application = angular.module('application', []);
+var application = angular.module('application', ['templates']);
