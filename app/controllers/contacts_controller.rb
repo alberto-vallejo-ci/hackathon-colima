@@ -20,6 +20,10 @@ class ContactsController < ApplicationController
   end
 
   def contact_params_valid?
-    [contact_params[:email], contact_params[:name], contact_params[:description]].all?(&:present?)
+    [
+      contact_params[:email],
+      contact_params[:name],
+      contact_params[:description]
+    ].all?(&:present?)
   end
 end
