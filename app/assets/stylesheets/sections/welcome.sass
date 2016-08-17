@@ -28,13 +28,22 @@ section#welcome
           flex: 3 1 auto
           display: flex
           flex-flow: column nowrap
-          .date--content--head
-          .date--content--subheader
   .hero--footer
     display: flex
     flex-flow: column nowrap
     .hero--footer-head, .hero--footer-subhead
       flex: 0 1 auto
+.slogan
+  display: flex
+  align-items: center
+  font-size: 1.25em
+  margin-left: 0.2em
+  span
+    color: $gray-font
+  i
+    color: $highlight-font
+    font-size: 0.7em
+    margin: 0 0.5em
 
 .hero
   height: 38rem
@@ -51,16 +60,6 @@ section#welcome
         color: white
         .date--content--head
           font-size: 3em
-        .date--content--subheader
-          display: flex
-          align-items: center
-          font-size: 1.25em
-          span
-            color: $gray-font
-          i
-            color: $highlight-font
-            font-size: 0.7em
-            margin: 0 7px
     .hero--button a
       box-shadow: #000000 1px 1px 2px 1px
       font-size: 20px
