@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular/angular
+//= require jquery-sticky/jquery.sticky
 //= require angular-rails-templates
-//= require bootstrap-sprockets
 //= require_tree ./application
 //= require_tree ./templates

@@ -42,16 +42,16 @@ GEM
       sprockets (>= 3.0, < 5)
       tilt
     arel (6.0.3)
-    autoprefixer-rails (6.3.7)
+    autoprefixer-rails (6.4.0.2)
       execjs
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bcrypt (3.1.11)
-    bootstrap-sass (3.3.7)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
+    bootstrap (4.0.0.alpha3)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.4.19)
     builder (3.2.2)
     coderay (1.1.1)
     coffee-rails (4.1.1)
@@ -178,7 +178,7 @@ PLATFORMS
 
 DEPENDENCIES
   angular-rails-templates
-  bootstrap-sass
+  bootstrap (= 4.0.0.alpha3)
   coffee-rails
   devise
   figaro
@@ -190,7 +190,7 @@ DEPENDENCIES
   rails (= 4.2.7)
   sass-rails
   slim-rails
-  sprockets (~> 3.0)
+  sprockets
   sprockets-es6
   uglifier
 

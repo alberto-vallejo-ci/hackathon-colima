@@ -16,6 +16,8 @@
     "tests"
   ],
   "devDependencies": {
-    "angular": "^1.5.8"
+    "angular": "^1.5.8",
+    "bootstrap": "4.0.0-alpha.3",
+    "jquery-sticky": "git@github.com:garand/sticky.git#^1.0.3"
   }
 }
