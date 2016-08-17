@@ -1,7 +1,7 @@
 #contact-image.section.paralax
   .section-wrapper
     p= 'Contacto'
-    = render partial: 'slogan', locals: { first_value: 'Preguntas', second_value: 'Respuestas' }
+    = render 'slogan', words: ['Preguntas', 'Respuestas']
 
 #contact.section
   .section-wrapper

@@ -1,77 +1,75 @@
-#welcome
+section#welcome
   background: image_url('welcome_image.jpg')
   background-size: cover
-  padding: 100px 60px 30px
 
-  #hack-row
-    .image-container
-      @extend .col-md-5
-      padding: 0
-      text-align: left
-
-      img
-        height: 48px
-        width: 430px
-
-    .button-container
-      @extend .col-md-2, .offset-md-5
+.hero
+  display: flex
+  flex-flow: column nowrap
+  @extend .container
+  .hero--head, .hero--footer
+    flex: 0 1 auto
+  .hero--head
+    display: flex
+    flex-flow: row wrap
+    height: 20rem
+    .hero--logo
+      flex: 3 1 auto
+    .hero--button
+      flex: 1 1 auto
       display: flex
-      padding: 0
-      text-align: right
+      align-items: center
+      flex-flow: column nowrap
+    .hero--logo
+      display: flex
+      flex-flow: column nowrap
+      .logo--date
+        display: flex
+        .logo--date--content
+          flex: 3 1 auto
+          display: flex
+          flex-flow: column nowrap
+          .date--content--head
+          .date--content--subheader
+  .hero--footer
+    display: flex
+    flex-flow: column nowrap
+    .hero--footer-head, .hero--footer-subhead
+      flex: 0 1 auto
 
-      a
-        box-shadow: #000000 1px 1px 2px 1px
-        font-size: 20px
-        padding: 10px 50px
-
-  #logo-row
-    margin-top: 15px
-
-    .logo-container, .date-container
-      float: left
-
-    .date-container
-      margin-left: 15px
-      #date
-        display: inline-block
-        font-size: 45px
-        vertical-align: top
-
-      .slogan
-        display: inline-block
-        font-size: 20px
-        margin: 0
-        span
-          color: $gray-font
-        i
-          color: $highlight-font
-          margin: 0 7px
-
-  .commit-container
-    margin-top: 400px
-    p
-      margin: 0
-      &:first-of-type
-        font-size: 25px
-      &:last-of-type
-        font-size: 16px
-        color: $gray-font
-
-#welcome
-  @media (max-width: 991px)
-    #hack-row
-      .image-container
-        text-align: center
-
-      .button-container
-        margin-top: 15px
-        a
-          margin: 0 auto
-
-    #logo-row
-      display: table
-      margin: 40px auto 0
-      text-align: center
-
-    .commit-container
-      margin-top: 360px
+.hero
+  height: 38rem
+  position: relative
+  .hero--head
+    margin-top: 3rem
+    .hero--logo .logo--head
+      margin-bottom: 1em
+      img
+        width: 30em
+    .hero--logo .logo--date
+      .logo--date--content
+        margin-left: 1em
+        color: white
+        .date--content--head
+          font-size: 3em
+        .date--content--subheader
+          display: flex
+          align-items: center
+          font-size: 1.25em
+          span
+            color: $gray-font
+          i
+            color: $highlight-font
+            font-size: 0.7em
+            margin: 0 7px
+    .hero--button a
+      box-shadow: #000000 1px 1px 2px 1px
+      font-size: 20px
+      padding: 10px 50px
+  .hero--footer
+    position: absolute
+    bottom: 2em
+    .hero--footer-head img
+      width: 8em
+    .hero--footer-subhead
+      font-size: 16px
+      color: $gray-font
