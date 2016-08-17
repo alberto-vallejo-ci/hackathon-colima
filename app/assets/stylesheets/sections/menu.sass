@@ -1,25 +1,30 @@
-#menu.section
+section#main-menu
   background: $bg-menu
   padding: 20px 60px
   z-index: 9999
 
-  img
-    height: 35px
+  .menu
+    display: flex
+    @extend .container
+    .menu--buttons
+      flex: 3 1 auto
+      display: flex
+      align-items: center
+      justify-content: flex-end
 
-  #buttons-container
-    display: inline-block
-    float: right
-    margin-top: 4px
-  a
-    box-shadow: none
-    padding: 9px 25px
-    vertical-align: middle
-    &.social
-      &.facebook
-        padding: 9px 10px 9px 25px
-      &:last-of-type
-        padding: 9px 0 9px 10px
-  i
-    color: $highlight-font
-    font-size: 25px
-    vertical-align: sub
+  .menu
+    display: flex
+    @extend .container
+    .menu--logo
+      img
+        height: 2rem
+    .menu--buttons
+      a
+        margin-left: 1em
+      a.buttons--main
+        @extend .main-btn
+        box-shadow: none
+        padding: 0.5em 1.5em
+      i
+        color: $highlight-font
+        font-size: 1.5em

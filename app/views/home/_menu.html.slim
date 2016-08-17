@@ -1,10 +1,10 @@
-#menu.section(sticky-js)
-  .section-wrapper
-    .row-wrapper
+section#main-menu(sticky-js)
+  .menu.container
+    .menu--logo
       = image_tag 'logohck.png'
-      #buttons-container
-        = link_to 'Registro', '#', class: 'main-btn'
-        = link_to '//facebook.com/HackColima', target: '_blank', class: 'social facebook' do
-          = fa_icon "facebook-official"
-        = link_to '//twitter.com/HackColima', target: '_blank', class: 'social' do
-          = fa_icon "twitter"
+    .menu--buttons
+      a.buttons--main(href='#') Registro
+      a(href='//facebook.com/HackColima' target='_blank')
+        = fa_icon "facebook-official"
+      a(href='//twitter.com/HackColima' target='_blank')
+        = fa_icon "twitter"
