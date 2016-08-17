@@ -6,20 +6,20 @@ section#welcome
   display: flex
   flex-flow: column nowrap
   @extend .container
-  .hero--head, .hero--footer
+  .hero-head, .hero-footer
     flex: 0 1 auto
-  .hero--head
+  .hero-head
     display: flex
     flex-flow: row wrap
     height: 20rem
-    .hero--logo
+    .hero-head--logo
       flex: 3 1 auto
-    .hero--button
+    .hero-head--button
       flex: 1 1 auto
       display: flex
       align-items: center
       flex-flow: column nowrap
-    .hero--logo
+    .hero-head--logo
       display: flex
       flex-flow: column nowrap
       .logo--date
@@ -28,11 +28,12 @@ section#welcome
           flex: 3 1 auto
           display: flex
           flex-flow: column nowrap
-  .hero--footer
+  .hero-footer
     display: flex
     flex-flow: column nowrap
-    .hero--footer-head, .hero--footer-subhead
+    .hero-footer--head
       flex: 0 1 auto
+
 .slogan
   display: flex
   align-items: center
@@ -48,27 +49,25 @@ section#welcome
 .hero
   height: 38rem
   position: relative
-  .hero--head
+  .hero-head
     margin-top: 3rem
-    .hero--logo .logo--head
-      margin-bottom: 1em
-      img
-        width: 30em
-    .hero--logo .logo--date
-      .logo--date--content
+    .hero-head--logo
+      .logo--head
+        margin-bottom: 1em
+        img
+          width: 30em
+    .hero-head--logo .logo--date
+      .date--content
         margin-left: 1em
         color: white
-        .date--content--head
+        .content--head
           font-size: 3em
-    .hero--button a
+    .hero-head--button a
       box-shadow: #000000 1px 1px 2px 1px
       font-size: 20px
       padding: 10px 50px
-  .hero--footer
+  .hero-footer
     position: absolute
     bottom: 2em
-    .hero--footer-head img
+    .hero-footer--head img
       width: 8em
-    .hero--footer-subhead
-      font-size: 16px
-      color: $gray-font

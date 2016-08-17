@@ -1,17 +1,17 @@
 section#welcome
   .hero
-    .hero--head
-      .hero--logo
+    .hero-head
+      .hero-head--logo
         .logo--head
           = image_tag 'hackcolima.png'
         .logo--date
-          .logo--date--head
+          .date--head
             = image_tag 'logohck.png'
-          .logo--date--content
-            .date--content--head Octubre 2016
+          .date--content
+            .content--head Octubre 2016
             = render 'slogan', words: ['Tecnología', 'Planeta']
-      .hero--button
+      .hero-head--button
         a.main-btn(href='#') Registro
-    .hero--footer
-      .hero--footer-head
+    .hero-footer
+      .hero-footer--head
         = image_tag 'commit-logo.svg'
