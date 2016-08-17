@@ -7,15 +7,15 @@ section#welcome
   flex-flow: column nowrap
   @extend .container
   .hero-head, .hero-footer
-    flex: 0 1 auto
+    flex: 1 0 0
   .hero-head
     display: flex
     flex-flow: row wrap
     height: 20rem
     .hero-head--logo
-      flex: 3 1 auto
+      flex: 3 0 0
     .hero-head--button
-      flex: 1 1 auto
+      flex: 1 0 0
       display: flex
       align-items: center
       flex-flow: column nowrap
@@ -25,14 +25,16 @@ section#welcome
       .logo--date
         display: flex
         .logo--date--content
-          flex: 3 1 auto
+          flex: 3 0 0
           display: flex
           flex-flow: column nowrap
   .hero-footer
     display: flex
     flex-flow: column nowrap
+    justify-content: flex-end
+    margin-bottom: 2em
     .hero-footer--head
-      flex: 0 1 auto
+      flex: 0 0 0
 
 .slogan
   display: flex
@@ -48,7 +50,6 @@ section#welcome
 
 .hero
   height: 38rem
-  position: relative
   .hero-head
     margin-top: 3rem
     .hero-head--logo
@@ -63,11 +64,9 @@ section#welcome
         .content--head
           font-size: 3em
     .hero-head--button a
-      box-shadow: #000000 1px 1px 2px 1px
-      font-size: 20px
-      padding: 10px 50px
+      box-shadow: #000000 0.0625em 0.0625em 0.125em 0.0625em
+      font-size: 1.25em
+      padding: 0.625em 3em
   .hero-footer
-    position: absolute
-    bottom: 2em
     .hero-footer--head img
       width: 8em
