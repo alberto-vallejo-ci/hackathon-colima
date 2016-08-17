@@ -8,5 +8,6 @@ html
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
-  body
+  body(ng-app='application')
+    flash-messages
     = yield

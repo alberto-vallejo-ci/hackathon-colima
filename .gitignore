@@ -17,3 +17,6 @@
 
 # Ignore application configuration
 /config/application.yml
+
+node_modules
+vendor/assets/bower_components

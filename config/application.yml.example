@@ -5,6 +5,7 @@
 
 # PRODUCTION MUST HAVE keys
 # SECRET_KEY_BASE:
+# mailgun_smtp_password: 'mailgun-password-here'
 
 # SHOULD HAVE keys
 # BUNDLE_GEMFILE:

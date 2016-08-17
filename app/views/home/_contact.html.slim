@@ -7,9 +7,19 @@
   .section-wrapper
     .row-wrapper
       .map-container
-      .form-container
-        form
-          = text_field_tag :name, '', placeholder: 'Nombre'
-          = text_field_tag :email, '', placeholder: 'Email'
-          = text_area_tag :description, '', placeholder: 'Descripción'
-          = submit_tag :save, class: 'main-btn', value: 'Enviar'
+      .form-container(ng-controller='ContactFormController')
+        form(novalidate name='form')
+          input(ng-model='contact.name' name='name' type='text' placeholder='Nombre' required minlength="2")
+          div(ng-show='form.$submitted || form.name.$touched')
+            span.text-danger(ng-show='form.name.$error.required') Por favor, proporciónanos un nombre de contacto
+            span.text-danger(ng-show='form.name.$error.minlength') Tu nombre debe al menos tener dos caracteres
+
+          input(ng-model='contact.email' name='email' type='email' placeholder='Correo electrónico' required)
+          div(ng-show='form.$submitted || form.email.$touched')
+            span.text-danger(ng-show='form.email.$error.required') Por favor, proporciónanos un correo electrónico
+            span.text-danger(ng-show='form.email.$error.email') Este no es un correo electrónico válido
+
+          textarea(ng-model='contact.description' name='description' placeholder='Descripción' required minlength="20")
+          div(ng-show='form.$submitted || form.description.$touched')
+            span.text-danger(ng-show='form.description.$error.minlength || form.description.$error.required') La descripción debe tener al menos 20 caracteres
+          input.main-btn(type="submit" name="commit" value="Enviar" ng-click="onSubmit()")

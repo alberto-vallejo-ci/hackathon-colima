@@ -10,6 +10,7 @@ $ ->
 
     defultMapOptions: ->
       {
+        scrollwheel: false,
         center: { lat: 19.2626194, lng: -103.7237538 },
         disableDefaultUI: false,
         zoom: 15
