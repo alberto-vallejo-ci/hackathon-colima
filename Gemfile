@@ -16,6 +16,8 @@ gem "sprockets"
 gem "sprockets-es6"
 gem "angular-rails-templates"
 
+gem 'rails_12factor', group: :production
+
 group :development do
   gem "letter_opener"
 end
