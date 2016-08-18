@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'home#show'
 
   resource :contact, only: :create
+  resource :challenge, only: :create
 
   namespace :admin, module: :administrator do
     root to: 'home#show'
