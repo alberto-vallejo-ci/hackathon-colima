@@ -5,6 +5,8 @@ section#register
     @extend .container
     color: $gray-font
     display: flex
+    flex-flow: row wrap
+    align-items: center
     .register--article
       flex: 1 0 0
     .register--action
@@ -15,13 +17,20 @@ section#register
       justify-content: center
 
   .register
+    min-height: 15em
+    .register--article, .register--action
+      min-width: 20em
+      padding: 1em
     .register--article
-      article
-        header
-          font-size: 1.75em
-        p
-          font-size: 1.25em
+      header
+        font-size: 1.5em
+        font-weight: bold
+        margin-bottom: 0.5em
+      p
+        font-size: 0.9em
     .register--action
+      & > *
+        margin-bottom: 0.3em
       svg, img
         width: 14em
         height: 6em
@@ -29,7 +38,6 @@ section#register
           fill: #444
       .action--hashtag
         font-size: 1.75em
-        margin: 0.2em 0
       .action--main-button
         @extend .main-btn
         padding: 0.5em 2em
