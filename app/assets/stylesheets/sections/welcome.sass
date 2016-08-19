@@ -1,18 +1,49 @@
 section#welcome
-  background-size: 100% !important
+  background-size: 300% !important
+  background-position-y: 32em !important
+  background-position-x: 46em !important
+
+  // iphone 5 landscape
+  @include media-breakpoint-up(sm)
+    background-size: 200% !important
+    background-position-y: 40em !important
+    background-position-x: 54em !important
+
+  // iphone 6 landscape
+  @include media-breakpoint-up(smplus)
+    background-size: 150% !important
+    background-position-y: 35em !important
+    background-position-x: 62em !important
+
+  // iphone 6 landscape
+  @include media-breakpoint-up(md)
+    background-position-y: 46em !important
+
+  // iphone 6 landscape
+  @include media-breakpoint-up(lg)
+    background-position-y: 53em !important
+    background-size: 130% !important
+    background-position-x: 0 !important
 
 .hero
   display: flex
   flex-flow: column nowrap
   @extend .container
-  .hero-head, .hero-footer
+  .hero-footer
     flex: 1 0 0
   .hero-head
+    flex: 3 0 0
+    @include media-breakpoint-up(smplus)
+      flex: 6 0 0
+    @include media-breakpoint-up(md)
+      flex: 1 0 0
+
     display: flex
     flex-flow: row wrap
-    height: 20rem
     .hero-head--logo
       flex: 3 0 0
+      @include media-breakpoint-up(sm)
+        flex: 2 0 0
     .hero-head--button
       flex: 1 0 0
       display: flex
@@ -30,33 +61,55 @@ section#welcome
   .hero-footer
     display: flex
     flex-flow: column nowrap
-    justify-content: flex-end
-    align-items: flex-end
-    margin-bottom: 2em
     .hero-footer--head
       flex: 0 0 0
 
 .hero
-  height: 38rem
+  height: 31rem
+  @include media-breakpoint-up(smplus)
+    height: 19rem
+  @include media-breakpoint-up(md)
+    height: 25rem
+  @include media-breakpoint-up(xl)
+    height: 38rem
+
   .hero-head
+    // height: 20rem
     margin-top: 3rem
     .hero-head--logo
+      justify-content: space-around
+      @include media-breakpoint-up(md)
+        justify-content: flex-start
       .logo--head
         margin-bottom: 1em
         img
-          width: 30em
+          max-width: 30em
+          width: 100%
     .hero-head--logo .logo--date
+      align-items: center
       .date--head img
-        width: 4.5em
+        width: 5em
       .date--content
         margin-left: 1em
         color: white
         .content--head
           font-size: 3em
-    .hero-head--button a
-      box-shadow: #000000 0.0625em 0.0625em 0.125em 0.0625em
-      font-size: 1.25em
-      padding: 0.625em 3em
+          line-height: 1
+    .hero-head--button
+      justify-content: center
+      @include media-breakpoint-up(md)
+        justify-content: flex-start
+      a
+        box-shadow: #000000 0.0625em 0.0625em 0.125em 0.0625em
+        font-size: 1.25em
+        padding: 0.625em 2em
+        @include media-breakpoint-up(md)
+          padding: 0.625em 3em
   .hero-footer
+    justify-content: flex-end
+    align-items: flex-end
+    margin-bottom: 2em
+    @include media-breakpoint-up(smplus)
+      margin-bottom: 1rem
     .hero-footer--head img
       width: 8em

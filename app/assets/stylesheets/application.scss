@@ -1,0 +1,24 @@
+$enable-flex: true;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 544px,
+  smplus: 667px,
+  md: 768px,
+  mdplus: 1024px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$container-max-widths: (
+  sm: 576px,
+  smplus: 680px,
+  md: 720px,
+  lg: 940px,
+  xl: 1140px
+);
+
+@import 'common/variables';
+@import 'bootstrap/scss/bootstrap';
+@import 'elements/*';
+@import 'sections/*';
+@import 'font-awesome';
