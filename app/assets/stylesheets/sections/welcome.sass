@@ -27,7 +27,7 @@ section#welcome
 .hero
   @include flex-box
   @include flex-flow(column nowrap)
-  @extend .container
+  @extend .header-container
   .hero-footer
     @include flex(1, 0, 0)
   .hero-head
@@ -64,7 +64,7 @@ section#welcome
 .hero
   min-height: 31rem
   @include media-breakpoint-up(smplus)
-    min-height: 19rem
+    min-height: 22rem
   @include media-breakpoint-up(md)
     min-height: 28rem
   @include media-breakpoint-up(xl)

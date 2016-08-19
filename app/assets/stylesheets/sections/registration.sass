@@ -2,7 +2,7 @@ section#register
   background: #F3F3F3
 
   .register
-    @extend .container
+    @extend .content-container
     color: $gray-font
     @include flex-box
     @include flex-flow(column)
@@ -21,8 +21,7 @@ section#register
   .register
     min-height: 15em
     .register--article, .register--action
-      min-width: 18em
-      padding: 1em
+      min-width: 10em
     .register--article
       header
         font-size: 1.5em
