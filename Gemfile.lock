@@ -42,6 +42,8 @@ GEM
       sprockets (>= 3.0, < 5)
       tilt
     arel (6.0.3)
+    autoprefixer-rails (6.4.0.2)
+      execjs
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -178,6 +180,7 @@ PLATFORMS
 
 DEPENDENCIES
   angular-rails-templates
+  autoprefixer-rails
   coffee-rails
   devise
   figaro
