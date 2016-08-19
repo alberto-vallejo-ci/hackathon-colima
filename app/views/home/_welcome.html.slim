@@ -12,6 +12,4 @@ section#welcome(ng-parallax pattern="'#{image_url('welcome_image.jpg')}'")
             = render 'slogan', words: ['Tecnología', 'Planeta']
       .hero-head--button
         a.main-btn(href='#') Registro
-    .hero-footer
-      .hero-footer--head
-        = image_tag 'commit-logo.svg'
+    .hero-footer= image_tag 'commit-logo.svg'

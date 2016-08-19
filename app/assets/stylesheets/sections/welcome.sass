@@ -47,7 +47,6 @@ section#welcome
     .hero-head--button
       flex: 1 0 0
       display: flex
-      align-items: center
       flex-flow: column nowrap
     .hero-head--logo
       display: flex
@@ -61,8 +60,6 @@ section#welcome
   .hero-footer
     display: flex
     flex-flow: column nowrap
-    .hero-footer--head
-      flex: 0 0 0
 
 .hero
   min-height: 31rem
@@ -96,6 +93,7 @@ section#welcome
           font-size: 3em
           line-height: 1
     .hero-head--button
+      align-items: center
       justify-content: center
       @include media-breakpoint-up(md)
         justify-content: flex-start
@@ -111,5 +109,5 @@ section#welcome
     margin-bottom: 2em
     @include media-breakpoint-up(smplus)
       margin-bottom: 1rem
-    .hero-footer--head img
+    img
       width: 8em
