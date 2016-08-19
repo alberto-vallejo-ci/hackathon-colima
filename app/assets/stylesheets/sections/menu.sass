@@ -4,22 +4,20 @@ section#main-menu
 
   .menu
     @include flex-box
-    padding-top: 1.25em
-    padding-bottom: 1.25em
-    @extend .container
+    @extend .header-container
     .menu--buttons
       @include flex(3, 0, 0)
       @include flex-box
-      align-items: center
-      justify-content: flex-end
 
   .menu
-    @include flex-box
-    @extend .container
+    padding-top: 1.25em
+    padding-bottom: 1.25em
     .menu--logo
       img
         height: 2rem
     .menu--buttons
+      align-items: center
+      justify-content: flex-end
       a
         margin-left: 2em
       a.buttons--main
