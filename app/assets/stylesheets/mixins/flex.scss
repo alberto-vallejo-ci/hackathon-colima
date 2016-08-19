@@ -3,10 +3,10 @@
   display: flex;
 }
 
-@mixin flex($arguments...) {
-  -webkit-flex: $arguments; /* Safari 6.1+ */
-  -ms-flex: $arguments; /* IE 10 */
-  flex: $arguments;
+@mixin flex($grow, $shrink, $base) {
+  -webkit-flex: $grow $shrink auto; /* Safari 6.1+ */
+  -ms-flex: $grow $shrink auto; /* IE 10 */
+  flex: $grow $shrink auto;
 }
 
 @mixin flex-flow($arguments...) {

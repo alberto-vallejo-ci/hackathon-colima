@@ -8,9 +8,9 @@ section#register
     @include flex-flow(row wrap)
     align-items: center
     .register--article
-      @include flex(1 0 0)
+      @include flex(1, 0, 0)
     .register--action
-      @include flex(1 0 0)
+      @include flex(1, 0, 0)
       @include flex-box
       @include flex-flow(column nowrap)
       align-items: center
@@ -22,6 +22,7 @@ section#register
       min-width: 18em
       padding: 1em
     .register--article
+      width: 100%
       header
         font-size: 1.5em
         font-weight: bold

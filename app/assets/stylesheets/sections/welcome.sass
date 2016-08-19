@@ -1,13 +1,12 @@
 section#welcome
-  background-size: 300% !important
-  background-position-y: 32em !important
-  background-position-x: 46em !important
+  background-size: 350% !important
+  background-position-y: 0em !important
+  background-position-x: 50em !important
 
   // iphone 5 landscape
   @include media-breakpoint-up(sm)
-    background-size: 200% !important
-    background-position-y: 40em !important
-    background-position-x: 54em !important
+    background-position-y: 0em !important
+    background-position-x: -40em !important
 
   // iphone 6 landscape
   @include media-breakpoint-up(smplus)
@@ -15,11 +14,11 @@ section#welcome
     background-position-y: 35em !important
     background-position-x: 62em !important
 
-  // iphone 6 landscape
+  // tablet
   @include media-breakpoint-up(md)
     background-position-y: 46em !important
 
-  // iphone 6 landscape
+  // tablet desktop
   @include media-breakpoint-up(lg)
     background-position-y: 53em !important
     background-size: 130% !important
@@ -30,22 +29,22 @@ section#welcome
   @include flex-flow(column nowrap)
   @extend .container
   .hero-footer
-    @include flex(1 0 0)
+    @include flex(1, 0, 0)
   .hero-head
-    @include flex(3 0 0)
+    @include flex(3, 0, 0)
     @include media-breakpoint-up(smplus)
-      @include flex(6 0 0)
+      @include flex(6, 0, 0)
     @include media-breakpoint-up(md)
-      @include flex(1 0 0)
+      @include flex(1, 0, 0)
 
     @include flex-box
     @include flex-flow(row wrap)
     .hero-head--logo
-      @include flex(3 0 0)
+      @include flex(3, 0, 0)
       @include media-breakpoint-up(sm)
-        @include flex(2 0 0)
+        @include flex(2, 0, 0)
     .hero-head--button
-      @include flex(1 0 0)
+      @include flex(1, 0, 0)
       @include flex-box
       @include flex-flow(column nowrap)
     .hero-head--logo
@@ -56,7 +55,7 @@ section#welcome
         .logo--date--content
           @include flex-box
           @include flex-flow(column nowrap)
-          @include flex(3 0 0)
+          @include flex(3, 0, 0)
   .hero-footer
     @include flex-box
     @include flex-flow(column nowrap)
@@ -75,8 +74,11 @@ section#welcome
     margin-top: 3rem
     .hero-head--logo
       justify-content: space-around
+      align-items: center
+      width: 100%
       @include media-breakpoint-up(md)
         justify-content: flex-start
+        align-items: flex-start
       .logo--head
         margin-bottom: 1em
         img
@@ -84,8 +86,10 @@ section#welcome
           width: 100%
     .hero-head--logo .logo--date
       align-items: center
-      .date--head img
-        width: 5em
+      .date--head
+        min-width: 5em
+        img
+          width: 5em
       .date--content
         margin-left: 1em
         color: white

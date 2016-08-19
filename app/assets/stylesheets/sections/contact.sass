@@ -6,7 +6,7 @@ section#contact
     padding-top: 1em
     padding-bottom: 1em
     .contact--form, .contact--map
-      flex: 1 0 0
+      @include flex(1, 0, 0)
       padding: 1em
       min-width: 18em
     .contact--map
@@ -16,5 +16,6 @@ section#contact
       @include flex-box
       align-items: center
       justify-content: center
+      width: 100%
       form
         width: 100%

@@ -1,18 +1,25 @@
 .information
   @extend .container
   @include flex-box
+  @include flex-flow(row wrap)
   align-items: center
+  padding-top: 1em
+  padding-bottom: 1em
   .information--image
-    flex: 1 0 0
+    @include flex(1, 0, 0)
+    @include flex-box
+    justify-content: center
     font-size: 8em
   .information--content
     @include flex-box
     @include flex-flow(column nowrap)
-    @include flex(3 0 0)
+    @include flex(3, 0, 0)
+    width: 100%
     p
       color: $gray-font-strong
       font-size: 1.1em
       letter-spacing: 1px
+      padding: 1em
       margin: 0
       span
         color: $highlight-font
