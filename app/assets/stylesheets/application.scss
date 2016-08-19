@@ -20,7 +20,7 @@ $container-max-widths: (
 @import 'common/variables';
 @import 'mixins/*';
 @import 'bootstrap/scss/bootstrap';
+@import 'components/*';
 @import 'elements/*';
 @import 'sections/*';
-@import 'components/*';
 @import 'font-awesome';
