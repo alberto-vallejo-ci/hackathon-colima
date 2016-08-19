@@ -3,7 +3,6 @@ source "https://rubygems.org"
 ruby "2.3.0"
 gem "rails", "4.2.7"
 
-gem "bootstrap-sass"
 gem "coffee-rails"
 gem "font-awesome-rails"
 gem "jquery-rails"
@@ -16,6 +15,8 @@ gem "figaro"
 gem "sprockets"
 gem "sprockets-es6"
 gem "angular-rails-templates"
+
+gem 'rails_12factor', group: :production
 
 group :development do
   gem "letter_opener"

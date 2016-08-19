@@ -1,21 +1,15 @@
-#welcome.section
-  .section-wrapper
-    #hack-row.row-wrapper
-      .image-container
-        = image_tag 'hackcolima.png'
-      .button-container
-        = link_to 'Registro', '#', class: 'main-btn'
-
-    #logo-row.row-wrapper
-      .logo-container
-        = image_tag 'logohck.png'
-      .date-container
-        .row-wrapper
-          span#date= 'Octubre 2016'
-        .row-wrapper
-          = render partial: 'slogan', locals: { first_value: 'Tecnología', second_value: 'Planeta' }
-
-    #commit-row.row-wrapper
-      .commit-container
-        p Logo
-        p coordinado por Commit
+section#welcome(ng-parallax pattern="'#{image_url('welcome_image.jpg')}'")
+  .hero.container
+    .hero-head
+      .hero-head--logo
+        .logo--head
+          = image_tag 'hackcolima.png'
+        .logo--date
+          .date--head
+            = image_tag 'logohck.png'
+          .date--content
+            .content--head Octubre 2016
+            = render 'slogan', words: ['Tecnología', 'Planeta']
+      .hero-head--button
+        a.main-btn(href='#') Registro
+    .hero-footer= image_tag 'commit-logo.svg'

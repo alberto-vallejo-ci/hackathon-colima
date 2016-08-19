@@ -1,4 +1,5 @@
-p.slogan
-  span= first_value
-  = fa_icon "plus"
-  span= second_value
+.slogan
+  - words[0...-1].each do |word|
+    span= word
+    = fa_icon "plus"
+  span= words[-1]

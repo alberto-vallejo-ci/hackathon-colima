@@ -1,20 +1,19 @@
-#information
-
-  p, i
-    color: $gray-font-strong
-
-  .image-container
-    @extend .col-md-3
-    i
-      font-size: 14em
-
-  .text-container
-    @extend .col-md-9
+.information
+  @extend .container
+  display: flex
+  align-items: center
+  .information--image
+    flex: 1 0 0
+    font-size: 8em
+  .information--content
+    display: flex
+    flex-flow: column nowrap
+    flex: 3 0 0
     p
-      font-size: 1.5em
+      color: $gray-font-strong
+      font-size: 1.1em
       letter-spacing: 1px
-      margin: 26px 0
-      text-align: justify
-    span
-      color: $highlight-font
-      margin-right: 8px
+      margin: 0
+      span
+        color: $highlight-font
+        margin-right: 1em

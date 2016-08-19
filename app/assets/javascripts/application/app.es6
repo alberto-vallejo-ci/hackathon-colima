@@ -1,1 +1,1 @@
-var application = angular.module('application', ['templates']);
+var application = angular.module('application', ['templates', 'ngParallax']);

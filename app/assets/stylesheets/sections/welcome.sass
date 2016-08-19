@@ -1,77 +1,113 @@
-#welcome
-  background: image_url('welcome_image.jpg')
-  background-size: cover
-  padding: 100px 60px 30px
+section#welcome
+  background-size: 300% !important
+  background-position-y: 32em !important
+  background-position-x: 46em !important
 
-  #hack-row
-    .image-container
-      @extend .col-md-5
-      padding: 0
-      text-align: left
+  // iphone 5 landscape
+  @include media-breakpoint-up(sm)
+    background-size: 200% !important
+    background-position-y: 40em !important
+    background-position-x: 54em !important
 
-      img
-        height: 48px
-        width: 430px
+  // iphone 6 landscape
+  @include media-breakpoint-up(smplus)
+    background-size: 150% !important
+    background-position-y: 35em !important
+    background-position-x: 62em !important
 
-    .button-container
-      @extend .col-md-2, .col-md-offset-5
+  // iphone 6 landscape
+  @include media-breakpoint-up(md)
+    background-position-y: 46em !important
+
+  // iphone 6 landscape
+  @include media-breakpoint-up(lg)
+    background-position-y: 53em !important
+    background-size: 130% !important
+    background-position-x: 0 !important
+
+.hero
+  display: flex
+  flex-flow: column nowrap
+  @extend .container
+  .hero-footer
+    flex: 1 0 0
+  .hero-head
+    flex: 3 0 0
+    @include media-breakpoint-up(smplus)
+      flex: 6 0 0
+    @include media-breakpoint-up(md)
+      flex: 1 0 0
+
+    display: flex
+    flex-flow: row wrap
+    .hero-head--logo
+      flex: 3 0 0
+      @include media-breakpoint-up(sm)
+        flex: 2 0 0
+    .hero-head--button
+      flex: 1 0 0
       display: flex
-      padding: 0
-      text-align: right
+      flex-flow: column nowrap
+    .hero-head--logo
+      display: flex
+      flex-flow: column nowrap
+      .logo--date
+        display: flex
+        .logo--date--content
+          flex: 3 0 0
+          display: flex
+          flex-flow: column nowrap
+  .hero-footer
+    display: flex
+    flex-flow: column nowrap
 
+.hero
+  min-height: 31rem
+  @include media-breakpoint-up(smplus)
+    min-height: 19rem
+  @include media-breakpoint-up(md)
+    min-height: 28rem
+  @include media-breakpoint-up(xl)
+    min-height: 38rem
+
+  .hero-head
+    // height: 20rem
+    margin-top: 3rem
+    .hero-head--logo
+      justify-content: space-around
+      @include media-breakpoint-up(md)
+        justify-content: flex-start
+      .logo--head
+        margin-bottom: 1em
+        img
+          max-width: 30em
+          width: 100%
+    .hero-head--logo .logo--date
+      align-items: center
+      .date--head img
+        width: 5em
+      .date--content
+        margin-left: 1em
+        color: white
+        .content--head
+          font-size: 3em
+          line-height: 1
+    .hero-head--button
+      align-items: center
+      justify-content: center
+      @include media-breakpoint-up(md)
+        justify-content: flex-start
       a
-        box-shadow: #000000 1px 1px 2px 1px
-        font-size: 20px
-        padding: 10px 50px
-
-  #logo-row
-    margin-top: 15px
-
-    .logo-container, .date-container
-      float: left
-
-    .date-container
-      margin-left: 15px
-      #date
-        display: inline-block
-        font-size: 45px
-        vertical-align: top
-
-      .slogan
-        display: inline-block
-        font-size: 20px
-        margin: 0
-        span
-          color: $gray-font
-        i
-          color: $highlight-font
-          margin: 0 7px
-
-  .commit-container
-    margin-top: 400px
-    p
-      margin: 0
-      &:first-of-type
-        font-size: 25px
-      &:last-of-type
-        font-size: 16px
-        color: $gray-font
-
-#welcome
-  @media (max-width: 991px)
-    #hack-row
-      .image-container
-        text-align: center
-
-      .button-container
-        margin-top: 15px
-        a
-          margin: 0 auto
-
-    #logo-row
-      display: table
-      margin: 40px auto 0
-      text-align: center
-
-    .commit-container
-      margin-top: 360px
+        box-shadow: #000000 0.0625em 0.0625em 0.125em 0.0625em
+        font-size: 1.25em
+        padding: 0.625em 2em
+        @include media-breakpoint-up(md)
+          padding: 0.625em 3em
+  .hero-footer
+    justify-content: flex-end
+    align-items: flex-end
+    margin-bottom: 2em
+    @include media-breakpoint-up(smplus)
+      margin-bottom: 1rem
+    img
+      width: 8em

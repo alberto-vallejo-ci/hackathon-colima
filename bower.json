@@ -16,6 +16,9 @@
     "tests"
   ],
   "devDependencies": {
-    "angular": "^1.5.8"
+    "angular": "^1.5.8",
+    "bootstrap": "4.0.0-alpha.3",
+    "jquery-sticky": "^1.0.3",
+    "ng-simple-parallax": "*"
   }
 }

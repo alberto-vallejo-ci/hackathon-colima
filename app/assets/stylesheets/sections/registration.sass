@@ -1,27 +1,44 @@
-#registration
+section#register
   background: #F3F3F3
 
-  .text-container, .image-container
-    @extend .col-md-6
-    p
-      color: $gray-font
+  .register
+    @extend .container
+    color: $gray-font
+    display: flex
+    flex-flow: row wrap
+    align-items: center
+    .register--article
+      flex: 1 0 0
+    .register--action
+      flex: 1 0 0
+      display: flex
+      flex-flow: column nowrap
+      align-items: center
+      justify-content: center
 
-  .text-container
-    p:first-of-type
-      font-size: 1.75em
-    p:last-of-type
-      font-size: 1.25em
-
-  .image-container
-    p:first-of-type
-      font-size: 2em
-    p:last-of-type
-      font-size: 1.75em
-    a
-      display: block
-      font-size: 1.25em
-      font-weight: 400
-      letter-spacing: 3px
-      margin: 10px auto 0
-      padding: 15px 0
-      width: 200px
+  .register
+    min-height: 15em
+    .register--article, .register--action
+      min-width: 18em
+      padding: 1em
+    .register--article
+      header
+        font-size: 1.5em
+        font-weight: bold
+        margin-bottom: 0.5em
+      p
+        font-size: 0.9em
+    .register--action
+      & > *
+        margin-bottom: 0.3em
+      svg, img
+        width: 14em
+        height: 6em
+        path, polygon
+          fill: #444
+      .action--hashtag
+        font-size: 1.75em
+      .action--main-button
+        @extend .main-btn
+        padding: 0.5em 2em
+        font-size: 1.2em

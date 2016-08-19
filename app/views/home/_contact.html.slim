@@ -1,25 +1,26 @@
-#contact-image.section.paralax
-  .section-wrapper
-    p= 'Contacto'
-    = render partial: 'slogan', locals: { first_value: 'Preguntas', second_value: 'Respuestas' }
+section(ng-parallax pattern="'#{image_url('dark-forest.jpg')}'")
+  .header
+    header.header--container
+      h1 Contacto
+      h2= render 'slogan', words: ['Preguntas', 'Respuestas']
 
-#contact.section
-  .section-wrapper
-    .row-wrapper
-      .map-container
-      .form-container(ng-controller='ContactFormController')
-        form(novalidate name='form')
-          input(ng-model='contact.name' name='name' type='text' placeholder='Nombre' required minlength="2")
-          div(ng-show='form.$submitted || form.name.$touched')
-            span.text-danger(ng-show='form.name.$error.required') Por favor, proporciónanos un nombre de contacto
-            span.text-danger(ng-show='form.name.$error.minlength') Tu nombre debe al menos tener dos caracteres
+section#contact
+  .contact
+    .contact--map
+      div(google-map lat='19.2626194' lng='-103.7237538' zoom='15' title='"HackColima - Instituto Tecnológico de Colima"')
+    .contact--form(ng-controller='ContactFormController')
+      form(novalidate name='form')
+        input(ng-model='contact.name' name='name' type='text' placeholder='Nombre' required minlength="2")
+        div(ng-show='form.$submitted || form.name.$touched')
+          span.text-danger(ng-show='form.name.$error.required') Por favor, proporciónanos un nombre de contacto
+          span.text-danger(ng-show='form.name.$error.minlength') Tu nombre debe al menos tener dos caracteres
 
-          input(ng-model='contact.email' name='email' type='email' placeholder='Correo electrónico' required)
-          div(ng-show='form.$submitted || form.email.$touched')
-            span.text-danger(ng-show='form.email.$error.required') Por favor, proporciónanos un correo electrónico
-            span.text-danger(ng-show='form.email.$error.email') Este no es un correo electrónico válido
+        input(ng-model='contact.email' name='email' type='email' placeholder='Correo electrónico' required)
+        div(ng-show='form.$submitted || form.email.$touched')
+          span.text-danger(ng-show='form.email.$error.required') Por favor, proporciónanos un correo electrónico
+          span.text-danger(ng-show='form.email.$error.email') Este no es un correo electrónico válido
 
-          textarea(ng-model='contact.description' name='description' placeholder='Descripción' required minlength="20")
-          div(ng-show='form.$submitted || form.description.$touched')
-            span.text-danger(ng-show='form.description.$error.minlength || form.description.$error.required') La descripción debe tener al menos 20 caracteres
-          input.main-btn(type="submit" name="commit" value="Enviar" ng-click="onSubmit()")
+        textarea(ng-model='contact.description' name='description' placeholder='Descripción' required minlength="20")
+        div(ng-show='form.$submitted || form.description.$touched')
+          span.text-danger(ng-show='form.description.$error.minlength || form.description.$error.required') La descripción debe tener al menos 20 caracteres
+        input.main-btn(type="submit" name="commit" value="Enviar" ng-click="onSubmit()")
