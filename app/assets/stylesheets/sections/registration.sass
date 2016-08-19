@@ -4,15 +4,15 @@ section#register
   .register
     @extend .container
     color: $gray-font
-    display: flex
-    flex-flow: row wrap
+    @include flex-box
+    @include flex-flow(row wrap)
     align-items: center
     .register--article
-      flex: 1 0 0
+      @include flex(1 0 0)
     .register--action
-      flex: 1 0 0
-      display: flex
-      flex-flow: column nowrap
+      @include flex(1 0 0)
+      @include flex-box
+      @include flex-flow(column nowrap)
       align-items: center
       justify-content: center
 

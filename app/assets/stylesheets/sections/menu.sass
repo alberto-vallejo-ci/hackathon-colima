@@ -3,18 +3,18 @@ section#main-menu
   z-index: 9999
 
   .menu
-    display: flex
+    @include flex-box
     padding-top: 1.25em
     padding-bottom: 1.25em
     @extend .container
     .menu--buttons
-      flex: 3 0 0
-      display: flex
+      @include flex(3 0 0)
+      @include flex-box
       align-items: center
       justify-content: flex-end
 
   .menu
-    display: flex
+    @include flex-box
     @extend .container
     .menu--logo
       img

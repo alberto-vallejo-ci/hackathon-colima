@@ -26,40 +26,40 @@ section#welcome
     background-position-x: 0 !important
 
 .hero
-  display: flex
-  flex-flow: column nowrap
+  @include flex-box
+  @include flex-flow(column nowrap)
   @extend .container
   .hero-footer
-    flex: 1 0 0
+    @include flex(1 0 0)
   .hero-head
-    flex: 3 0 0
+    @include flex(3 0 0)
     @include media-breakpoint-up(smplus)
-      flex: 6 0 0
+      @include flex(6 0 0)
     @include media-breakpoint-up(md)
-      flex: 1 0 0
+      @include flex(1 0 0)
 
-    display: flex
-    flex-flow: row wrap
+    @include flex-box
+    @include flex-flow(row wrap)
     .hero-head--logo
-      flex: 3 0 0
+      @include flex(3 0 0)
       @include media-breakpoint-up(sm)
-        flex: 2 0 0
+        @include flex(2 0 0)
     .hero-head--button
-      flex: 1 0 0
-      display: flex
-      flex-flow: column nowrap
+      @include flex(1 0 0)
+      @include flex-box
+      @include flex-flow(column nowrap)
     .hero-head--logo
-      display: flex
-      flex-flow: column nowrap
+      @include flex-box
+      @include flex-flow(column nowrap)
       .logo--date
-        display: flex
+        @include flex-box
         .logo--date--content
-          flex: 3 0 0
-          display: flex
-          flex-flow: column nowrap
+          @include flex-box
+          @include flex-flow(column nowrap)
+          @include flex(3 0 0)
   .hero-footer
-    display: flex
-    flex-flow: column nowrap
+    @include flex-box
+    @include flex-flow(column nowrap)
 
 .hero
   min-height: 31rem

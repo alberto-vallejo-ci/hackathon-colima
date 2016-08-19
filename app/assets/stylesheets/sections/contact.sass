@@ -1,8 +1,8 @@
 section#contact
   .contact
     @extend .container
-    display: flex
-    flex-flow: row wrap-reverse
+    @include flex-box
+    @include flex-flow(row wrap-reverse)
     padding-top: 1em
     padding-bottom: 1em
     .contact--form, .contact--map
@@ -13,7 +13,7 @@ section#contact
       [google-map]
         min-height: 17.5em
     .contact--form
-      display: flex
+      @include flex-box
       align-items: center
       justify-content: center
       form

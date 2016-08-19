@@ -1,14 +1,14 @@
 .information
   @extend .container
-  display: flex
+  @include flex-box
   align-items: center
   .information--image
     flex: 1 0 0
     font-size: 8em
   .information--content
-    display: flex
-    flex-flow: column nowrap
-    flex: 3 0 0
+    @include flex-box
+    @include flex-flow(column nowrap)
+    @include flex(3 0 0)
     p
       color: $gray-font-strong
       font-size: 1.1em

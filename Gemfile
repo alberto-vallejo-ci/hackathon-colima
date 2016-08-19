@@ -15,7 +15,6 @@ gem "figaro"
 gem "sprockets"
 gem "sprockets-es6"
 gem "angular-rails-templates"
-gem "autoprefixer-rails"
 
 gem 'rails_12factor', group: :production
 

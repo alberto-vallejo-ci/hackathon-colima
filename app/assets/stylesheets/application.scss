@@ -18,6 +18,7 @@ $container-max-widths: (
 );
 
 @import 'common/variables';
+@import 'mixins/*';
 @import 'bootstrap/scss/bootstrap';
 @import 'elements/*';
 @import 'sections/*';
