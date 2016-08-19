@@ -1,7 +1,9 @@
 .information
   @extend .container
   @include flex-box
-  @include flex-flow(row wrap)
+  @include flex-flow(column)
+  @include media-breakpoint-up(md)
+    @include flex-flow(row)
   align-items: center
   padding-top: 1em
   padding-bottom: 1em
@@ -19,7 +21,6 @@
       color: $gray-font-strong
       font-size: 1.1em
       letter-spacing: 1px
-      padding: 1em
       margin: 0
       span
         color: $highlight-font

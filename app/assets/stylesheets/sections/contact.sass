@@ -2,9 +2,11 @@ section#contact
   .contact
     @extend .container
     @include flex-box
-    @include flex-flow(row wrap-reverse)
     padding-top: 1em
     padding-bottom: 1em
+    @include flex-flow(column)
+    @include media-breakpoint-up(md)
+      @include flex-flow(row wrap-reverse)
     .contact--form, .contact--map
       @include flex(1, 0, 0)
       padding: 1em

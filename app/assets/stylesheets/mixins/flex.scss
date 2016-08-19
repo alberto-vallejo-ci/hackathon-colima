@@ -4,9 +4,9 @@
 }
 
 @mixin flex($grow, $shrink, $base) {
-  -webkit-flex: $grow $shrink auto; /* Safari 6.1+ */
-  -ms-flex: $grow $shrink auto; /* IE 10 */
-  flex: $grow $shrink auto;
+  -webkit-flex: $grow $shrink $base; /* Safari 6.1+ */
+  -ms-flex: $grow $shrink $base; /* IE 10 */
+  flex: $grow $shrink $base;
 }
 
 @mixin flex-flow($arguments...) {

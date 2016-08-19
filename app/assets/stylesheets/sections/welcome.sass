@@ -32,13 +32,14 @@ section#welcome
     @include flex(1, 0, 0)
   .hero-head
     @include flex(3, 0, 0)
+    @include flex-box
+    @include flex-flow(column wrap)
+
     @include media-breakpoint-up(smplus)
       @include flex(6, 0, 0)
     @include media-breakpoint-up(md)
       @include flex(1, 0, 0)
-
-    @include flex-box
-    @include flex-flow(row wrap)
+      @include flex-flow(row wrap)
     .hero-head--logo
       @include flex(3, 0, 0)
       @include media-breakpoint-up(sm)
@@ -70,12 +71,10 @@ section#welcome
     min-height: 38rem
 
   .hero-head
-    // height: 20rem
     margin-top: 3rem
     .hero-head--logo
       justify-content: space-around
       align-items: center
-      width: 100%
       @include media-breakpoint-up(md)
         justify-content: flex-start
         align-items: flex-start

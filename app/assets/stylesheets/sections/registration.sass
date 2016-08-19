@@ -5,7 +5,9 @@ section#register
     @extend .container
     color: $gray-font
     @include flex-box
-    @include flex-flow(row wrap)
+    @include flex-flow(column)
+    @include media-breakpoint-up(md)
+      @include flex-flow(row nowrap)
     align-items: center
     .register--article
       @include flex(1, 0, 0)
@@ -22,7 +24,6 @@ section#register
       min-width: 18em
       padding: 1em
     .register--article
-      width: 100%
       header
         font-size: 1.5em
         font-weight: bold
