@@ -25,8 +25,5 @@
       .image-container
         .group
         p= 'Nombre'
-      .form-container
-        form
-          = text_field_tag :name, '', placeholder: 'Nombre'
-          = text_area_tag :description, '', placeholder: 'Descripción'
-          = submit_tag :save, class: 'main-btn', value: 'Registrar'
+
+      = render 'home/projects/form'

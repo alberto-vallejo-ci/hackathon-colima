@@ -1,0 +1,15 @@
+.form-container(ng-controller='ChallengeFormController')
+  form(novalidate name='form')
+    .message-container
+      div(ng-show='form.$submitted || form.name.$touched')
+        span.text-danger(ng-show='form.name.$error.required') Por favor, proporciónanos un nombre de reto
+        span.text-danger(ng-show='form.name.$error.minlength') El nombre debe al menos tener dos caracteres
+    input(ng-model='challenge.name' name='name' type='text' placeholder='Nombre' required minlength="2")
+
+    .message-container
+      div(ng-show='form.$submitted || form.name.$touched')
+        span.text-danger(ng-show='form.description.$error.required') Por favor, proporciónanos una descripcion del reto
+        span.text-danger(ng-show='form.description.$error.minlength') La descripcion debe al menos tener 20 caracteres
+    textarea(ng-model='challenge.description' name='description' placeholder='Descripción' required minlength="20")
+
+    input.main-btn(type="submit" name="commit" value="Enviar" ng-click="onSubmit()")
