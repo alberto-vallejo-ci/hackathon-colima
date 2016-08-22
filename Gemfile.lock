@@ -42,8 +42,6 @@ GEM
       sprockets (>= 3.0, < 5)
       tilt
     arel (6.0.3)
-    autoprefixer-rails (6.3.7)
-      execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
