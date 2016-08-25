@@ -1,7 +1,8 @@
-#projects-image.section.paralax
-  .section-wrapper
-    p= 'Proyectos'
-    = render 'slogan', words: ['Tecnología', 'Planeta']
+section(ng-parallax pattern="'#{image_url('dark-forest.jpg')}'")
+  .header
+    header.header--container
+      h1 Proyectos
+      h2= render 'slogan', words: ['Tecnología', 'Planeta']
 
 #projects.section
   .section-wrapper
