@@ -14,7 +14,7 @@ gem "devise"
 gem "figaro"
 gem "sprockets"
 gem "sprockets-es6"
-gem "angular-rails-templates"
+gem "angular-rails-templates", "1.0.2"
 gem "virtus"
 
 gem 'rails_12factor', group: :production
