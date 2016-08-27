@@ -1,9 +1,9 @@
 section#register
-  background: $bg-gray
+  background: map-get($colors, white-dark)
 
   .register
     @extend .content-container
-    color: $gray-font
+    color: map-get($colors, gray)
     @include flex-box
     @include flex-flow(column)
     @include media-breakpoint-up(md)

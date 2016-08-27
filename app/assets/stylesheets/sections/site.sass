@@ -8,66 +8,22 @@ body
   font-size: 1.25rem
   margin-left: 0.2em
   span
-    color: $gray-font
+    color: map-get($colors, gray)
   i
-    color: $highlight-font
+    color: map-get($colors, green)
     font-size: 0.7em
     margin: 0 0.5em
 
-.section
-  background: $bg-main
-
-  &.paralax
-    background: image_url('section_image.jpg')
-    background-position-y: 220px
-    padding: 45px 60px
-
-    p
-      margin: 0
-      &:first-of-type
-        font-size: 3em
-        font-weight: 500
-      &.slogan
-        font-size: 1.75em
-        i
-          color: $highlight-font
-          margin: 0 5px
-
-  .image-container
-    @extend .col-md-4
-    text-align: center
-
-  .message-container
-    @extend .col-md-8
-    margin: 0 0 3% 0
-    p
-      font-size: 18px
-      letter-spacing: 2px
-      text-align: right
-      span
-        color: $highlight-font
-
-.section-wrapper
-  margin: 0 auto
-  max-width: 1160px
-
-.row-wrapper
-  @extend .row
-  margin: 0
+section[role=navigation]
+  background: map-get($colors, white)
 
 .main-btn
-  background: $bg-button
-  // box-shadow: $gray-font 1px 1px 2px 1px
-  color: $color-button
+  background: map-get($colors, green)
+  color: map-get($colors, white)
   &:hover
-    background: $bg-button-hover
-    color: $color-button
+    background: map-get($colors, green-dark)
+    color: map-get($colors, white)
     text-decoration: none
-
-.main-btn-img
-  @extend .main-btn
-  span
-    margin: 0 10px 0 0
 
 @media (max-width: 1053px)
   .section .message-container p
