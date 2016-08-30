@@ -2,9 +2,9 @@ section(ng-parallax pattern="'#{image_url('dark-forest.jpg')}'")
   .header
     header.header--container
       h1 Retos
-      h2= render 'slogan', words: %w(Tecnología Planeta)
+      h2= render 'slogan', words: %w(Ideas Personas)
 
-#challenges.section
+section#challenges
   .section-wrapper
     .row-wrapper
       = render partial: 'home/challenges/challenge', collection: challenges, as: :challenge

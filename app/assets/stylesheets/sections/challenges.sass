@@ -19,26 +19,26 @@
           font-weight: 600
         > p:last-of-type
           font-size: 1em
-          color: $gray-font-medium
+          color: map-get($colors, gray)
 
       .description
-        color: $gray-font-medium
+        color: map-get($colors, gray)
         font-size: 1em
         font-weight: 300
 
       .button-container
         margin-top: 15px
         a
-          box-shadow: $gray-font-medium 1px 1px 1px 1px
+          box-shadow: map-get($colors, gray) 1px 1px 1px 1px
           font-size: 14px
           padding: 5px 20px
 
       &.new
-        background: $gray-font
+        background: map-get($colors, gray)
         padding: 80px 116px
 
         i
-          color: $highlight-font
+          color: map-get($colors, green)
           font-size: 35px
 
         &:hover
