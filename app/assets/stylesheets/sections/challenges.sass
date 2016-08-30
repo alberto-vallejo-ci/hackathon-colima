@@ -1,0 +1,57 @@
+#challenges
+  padding: 30px 60px
+
+  .row-wrapper:first-of-type
+    margin-bottom: 50px
+
+  .challenge-container
+    @extend .col-md-3
+    padding: 0 30px 0 0
+
+    .challenge
+      p
+        margin: 0
+
+      .title-container
+        margin-bottom: 10px
+        > p:first-of-type
+          font-size: 1.25em
+          font-weight: 600
+        > p:last-of-type
+          font-size: 1em
+          color: $gray-font-medium
+
+      .description
+        color: $gray-font-medium
+        font-size: 1em
+        font-weight: 300
+
+      .button-container
+        margin-top: 15px
+        a
+          box-shadow: $gray-font-medium 1px 1px 1px 1px
+          font-size: 14px
+          padding: 5px 20px
+
+      &.new
+        background: $gray-font
+        padding: 80px 116px
+
+        i
+          color: $highlight-font
+          font-size: 35px
+
+        &:hover
+          cursor: pointer
+
+  .form-container
+    @extend .col-md-6
+
+    .message-container
+      height: 25px
+      margin: 0
+      padding: 0
+      width: 100%
+
+    input[type="text"]
+      margin: 0

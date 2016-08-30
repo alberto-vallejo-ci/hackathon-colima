@@ -1,3 +1,5 @@
 class HomeController < ApplicationController
-  def show; end
+  def show
+    @challenges = Challenge.all
+  end
 end
