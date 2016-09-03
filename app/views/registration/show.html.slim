@@ -1,14 +1,14 @@
-#registration
+section#splash-registration
   .container
     .row
-      .logo.col-md-4
+      .logo.col-md-4.col-xs-8
         = image_tag 'logohck.svg'
-
+        
+    .row
+      .button
+        a.main-btn(href='https://nvite.com/HackColima2016/ae74') Registro
+        
     .row
       .date.col-md-4
         p= 'Octubre 2016'
         = render 'home/slogan', words: %w(Innovación Planeta)
-
-    .row
-      .button
-        a.main-btn(href='https://nvite.com/HackColima2016/ae74') Registro
