@@ -24,3 +24,7 @@ ul{
 strong{
   color: map-get($colors, green);
 }
+
+.container .wrapper{
+  padding: 3rem 0
+}
