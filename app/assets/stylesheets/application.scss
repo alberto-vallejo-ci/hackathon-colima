@@ -28,3 +28,12 @@ strong{
 .container .wrapper{
   padding: 3rem 0
 }
+
+.slogan{
+  display: flex;
+  align-items: center;
+  i{
+    margin: 0 0.3em;
+    color: map-get($colors, green);
+  }
+}
