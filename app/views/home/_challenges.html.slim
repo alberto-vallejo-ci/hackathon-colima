@@ -5,9 +5,16 @@ section(ng-parallax pattern="'#{image_url('dark-forest.jpg')}'")
       h2= render 'slogan', words: %w(Ideas Personas)
 
 section#challenges
-  .section-wrapper
-    .row-wrapper
-      = render partial: 'home/challenges/challenge', collection: challenges, as: :challenge
-      = render 'home/challenges/new'
+  .container
+    .wrapper
+      .row
+        .col-md-12
+          .categories
+            span Categorías
+            = categories_list
 
-      /= render 'home/challenges/form'
+      .list.row
+        = render partial: 'home/challenges/challenge', collection: @home.challenges, as: :challenge
+        = render partial: 'home/challenges/new'
+
+= render partial: 'home/challenges/form', locals: { categories: @home.categories }

@@ -1,15 +1,38 @@
-.form-container(ng-controller='ChallengeFormController')
-  form(novalidate name='form')
-    .message-container
-      div(ng-show='form.$submitted || form.name.$touched')
-        span.text-danger(ng-show='form.name.$error.required') Por favor, proporciónanos un nombre de reto
-        span.text-danger(ng-show='form.name.$error.minlength') El nombre debe al menos tener dos caracteres
-    input(ng-model='challenge.name' name='name' type='text' placeholder='Nombre' required minlength="2")
+section#new-challenge(ng-if='ui.registerChallenge' ng-cloak)
+  .container
+    .wrapper
+      .row
+        = render 'home/challenges/instructions'
 
-    .message-container
-      div(ng-show='form.$submitted || form.name.$touched')
-        span.text-danger(ng-show='form.description.$error.required') Por favor, proporciónanos una descripcion del reto
-        span.text-danger(ng-show='form.description.$error.minlength') La descripcion debe al menos tener 20 caracteres
-    textarea(ng-model='challenge.description' name='description' placeholder='Descripción' required minlength="20")
-
-    input.main-btn(type="submit" name="commit" value="Enviar" ng-click="onSubmit()")
+        .form.col-sm-6
+          form
+            .form-group
+              input.form-control(type='text' placeholder='Título de la idea o proyecto')
+            .form-group
+              input.form-control(type='text' placeholder='Nombre de quien propone')
+            .form-group
+              input.form-control(type='email' placeholder='Correo de contacto')
+            .form-group
+              input.form-control(type='number' placeholder='Teléfono de contacto')
+            .form-group
+              textarea.form-control(placeholder='¿Qué quieres lograr?')
+            .form-group
+              textarea.form-control(placeholder='Cómo lo piensas lograr?')
+            .form-group
+              textarea.form-control(placeholder='¿Qué perfiles crees que necesitas para tu equipo? (programador, diseñador, ...)')
+            .form-group
+              = select_tag 'category', options_from_collection_for_select(categories, 'id', 'name'), class: 'form-control', include_blank: true
+            fieldset.form-group
+              legend ¿Sabes dónde lo vas a implementar?
+              .radio
+                label.form-check-inline
+                  input.form-check-input(type='radio' ng-model='knowsWhere' name='knowsWhere' value='si')
+                  |  Sí
+                label.form-check-inline
+                  input.form-check-input(type='radio' ng-model='knowsWhere' name='knowsWhere' value='no')
+                  |  No
+            .form-group
+              input.form-control(type='text' ng-cloak='true' ng-if='knowsWhere == "si"' placeholder='Estado, Municipio, Localidad')
+            .form-group.text-xs-right
+              a.btn.btn-secondary(href='javascript:void(0)' ng-click='ui.registerChallenge = false') Cancelar
+              input.btn.btn-primary(type='submit' value='Enviar a Revisión')
