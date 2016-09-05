@@ -5,7 +5,7 @@ section#new-challenge(ng-if='ui.registerChallenge' ng-cloak)
         = render 'home/challenges/instructions'
 
         .form.col-sm-6(ng-controller='ChallengeFormController')
-          form(novalidate name='form')
+          form(novalidate name='form' ng-submit='onSubmit()')
             .form-group
               input.form-control(type='text' name='title' ng-model='challenge.title' required minlength='4' placeholder='Título de la idea o proyecto')
               .text-danger(ng-messages="form.title.$error" role="alert" ng-if='form.title.$dirty && form.title.$invalid' ng-cloak)
@@ -50,7 +50,7 @@ section#new-challenge(ng-if='ui.registerChallenge' ng-cloak)
                 .text-danger(ng-messages="form.isLookingForTeam.$error" role="alert" ng-if='form.isLookingForTeam.$dirty && form.isLookingForTeam.$invalid' ng-cloak)
                   div(ng-message='required') Selecciona una opción por favor
               .form-group(ng-cloak='true' ng-if='challenge.is_looking_for_team == "true"')
-                textarea.form-control(placeholder='¿Qué perfiles crees que necesitas para tu equipo? (programador, diseñador, ...)' name='profileRequirements' ng-model='challenges.profile_requirements' ng-required='challenge.is_looking_for_team == "true"')
+                textarea.form-control(placeholder='¿Qué perfiles crees que necesitas para tu equipo? (programador, diseñador, ...)' name='profileRequirements' ng-model='challenge.profile_requirements' ng-required='challenge.is_looking_for_team == "true"')
                 .text-danger(ng-messages="form.profileRequirements.$error" role="alert" ng-if='form.profileRequirements.$dirty && form.profileRequirements.$invalid' ng-cloak)
                   div(ng-message='required') Escribe brevemente qué perfil de personas buscas para tu equipo
               fieldset.form-group
