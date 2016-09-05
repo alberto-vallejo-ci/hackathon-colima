@@ -1,15 +1,10 @@
-section#welcome(ng-parallax pattern="'#{image_url('welcome_image.jpg')}'")
-  .hero.container
-    .hero-head
-      .hero-head--logo
-        .logo--head
-          = image_tag 'hackcolima.png'
-        .logo--date
-          .date--head
-            = image_tag 'logo.svg'
-          .date--content
-            .content--head Octubre 2016
-            = render 'slogan', words: ['Innovación', 'Planeta']
-      .hero-head--button
-        a.main-btn(href='https://nvite.com/HackColima2016/ae74' target='_blank') Registro
-    .hero-footer= image_tag 'commit-logo.svg'
+section#hero
+  .cover
+    .container
+      .logo
+        = image_tag 'logo.svg'
+      .date
+        span Octubre 2016
+      .actions
+        a.btn.btn-primary(href='https://nvite.com/HackColima2016/ae74' target='_blank') Registro
+      = render 'slogan', words: ['Innovación', 'Planeta']

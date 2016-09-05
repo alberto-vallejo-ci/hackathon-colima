@@ -1,13 +1,29 @@
-section#register
-  .register
-    article.register--article
-      header Innovación por el planeta
-      p
-        |Bacon ipsum dolor amet fatback boudin pastrami, alcatra strip steak
-        |swine tri-tip jowl shoulder. Chuck capicola chicken spare ribs
-        |porchetta filet mignon ball tip tri-tip tongue. Short loin tenderloin
-        |pork chop, leberkas pig doner brisket corned beef hamburger tri-tip.
-    .register--action
-      = image_tag 'commit-logo.svg', 'svg' => true
-      span.action--hashtag #HackColima2016
-      a.action--main-button(href='https://nvite.com/HackColima2016/ae74' target='_blank') Registro
+section#banner
+  .container
+    .wrapper
+      .row
+        .col-md-8
+          h2
+            .slogan
+              span Innovación
+              = fa_icon "plus"
+              span Planeta
+          article
+            blockquote
+              p
+                |El concepto de sostenibilidad define la capacidad de satisfacer
+                |las necesidades de la presente población local, sin comprometer
+                |la capacidad de las generaciones futuras o de poblaciones de otras
+                |localidades para satisfacer sus necesidades.
+                br
+                br
+                |¿En qué medida son sostenibles las prácticas actuales?
+              footer
+                |http://www.greenfacts.org/es/
+        .register.col-md-4
+          .commit-logo
+            a(href='http://commit.mx' target='blank')
+              = image_tag 'commit-logo.svg', 'svg' => true
+          .hashtag #HackColima2016
+          .actions
+            a.btn.btn-primary(href='https://nvite.com/HackColima2016/ae74' target='_blank') Registro
