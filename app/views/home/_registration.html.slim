@@ -2,7 +2,7 @@ section#banner
   .container
     .wrapper
       .row
-        .col-md-8
+        .col-md-8(ng-controller='EnvironmentQuotesController')
           h2
             .slogan
               span Innovación
@@ -10,16 +10,8 @@ section#banner
               span Planeta
           article
             blockquote
-              p
-                |El concepto de sostenibilidad define la capacidad de satisfacer
-                |las necesidades de la presente población local, sin comprometer
-                |la capacidad de las generaciones futuras o de poblaciones de otras
-                |localidades para satisfacer sus necesidades.
-                br
-                br
-                |¿En qué medida son sostenibles las prácticas actuales?
-              footer
-                |http://www.greenfacts.org/es/
+              p(ng-bind-html='quote.text')
+              footer(ng-bind='quote.source')
         .register.col-md-4
           .commit-logo
             a(href='http://commit.mx' target='blank')
