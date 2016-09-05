@@ -5,35 +5,35 @@ $enable-flex: true;
 @import 'application/*';
 @import 'font-awesome';
 
-@include media-breakpoint-down(sm){
-  html{ font-size: 10px }
-}
+@include media-breakpoint-down(sm) {
+  html{ font-size: 10px };
+};
 
-html, body{
+html, body {
   height: 100%;
-}
+};
 
-body{
+body {
   font-family: 'Open Sans', sans-serif
-}
+};
 
-ul{
+ul {
   list-style: none;
-}
+};
 
-strong{
+strong {
   color: map-get($colors, green);
-}
+};
 
-.container .wrapper{
+.container .wrapper {
   padding: 3rem 0
-}
+};
 
-.slogan{
+.slogan {
   display: flex;
   align-items: center;
-  i{
+  i {
     margin: 0 0.3em;
     color: map-get($colors, green);
-  }
-}
+  };
+};
