@@ -40,15 +40,8 @@ ActiveRecord::Schema.define(version: 20160903235736) do
   end
 
   create_table "challenges", force: :cascade do |t|
-    t.string   "name",                          null: false
-    t.string   "owner",                         null: false
-    t.string   "email",                         null: false
-    t.string   "telephone"
-    t.string   "profiles"
-    t.text     "target",                        null: false
-    t.text     "planning"
-    t.text     "description",                   null: false
-    t.boolean  "implementation", default: true, null: false
+    t.string   "name",        null: false
+    t.string   "description", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
