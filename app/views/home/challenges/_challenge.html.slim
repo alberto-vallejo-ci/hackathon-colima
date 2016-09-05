@@ -1,11 +1,11 @@
-.challenge-container
-  .challenge
-    .title-container
-      p= challenge.name
-      p= 'Tecnologia'
-
-    p.description
-      = truncate(challenge.description, length: 150)
-
-    .button-container
-      = link_to  'Dime más', '#', class: 'main-btn'
+.col-sm-6.col-md-3
+  article
+    header
+      .icon= image_tag("iconos/#{challenge.category_icon}.svg")
+      .flex
+      .title
+        p.name{ title= challenge.name }= truncate(challenge.name, length: 20)
+        p.category{ title= challenge.category_name }= truncate(challenge.category_name, length: 20)
+    p= truncate(challenge.description, length: 150)
+    .actions
+      a.main-btn(href='#') Dime más

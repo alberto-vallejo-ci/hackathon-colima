@@ -1,57 +1,75 @@
 #challenges
-  padding: 30px 60px
+  .categories
+    align-items: center
+    display: flex
+    margin: 1em 0
 
-  .row-wrapper:first-of-type
-    margin-bottom: 50px
-
-  .challenge-container
-    @extend .col-md-3
-    padding: 0 30px 0 0
-
-    .challenge
-      p
-        margin: 0
-
-      .title-container
-        margin-bottom: 10px
-        > p:first-of-type
-          font-size: 1.25em
-          font-weight: 600
-        > p:last-of-type
-          font-size: 1em
-          color: map-get($colors, gray)
-
-      .description
-        color: map-get($colors, gray)
-        font-size: 1em
-        font-weight: 300
-
-      .button-container
-        margin-top: 15px
-        a
-          box-shadow: map-get($colors, gray) 1px 1px 1px 1px
-          font-size: 14px
-          padding: 5px 20px
-
-      &.new
-        background: map-get($colors, gray)
-        padding: 80px 116px
-
-        i
-          color: map-get($colors, green)
-          font-size: 35px
-
-        &:hover
-          cursor: pointer
-
-  .form-container
-    @extend .col-md-6
-
-    .message-container
-      height: 25px
+    span
+      font-size: 1.3em
+    ul
+      display: flex
+      flex-basis: 90%
+      list-style: none
       margin: 0
+      li
+        margin: 0 0.5em
+        width: 2em
+
+  .list
+    article
+      margin-bottom: 1.5em
+
+      header
+        align-items: center
+        display: flex
+        margin-bottom: 1em
+
+        .icon
+          flex: 1 0 auto
+          width: 4em
+        .title
+          flex: 10 0 auto
+          margin-left: 0.4em
+          p
+            margin: 0
+          .name
+            font-size: 1.25em
+          .category
+            font-size: 1em
+
+      .actions a
+        box-shadow: map-get($colors, gray) 1px 1px 1px 1px
+        padding: 5px 20px
+
+    .new-challenge
+      align-items: center
+      background-color: map-get($colors, white-dark)
+      display: flex
+      font-size: 2em
+      justify-content: center
+      margin: 1em
       padding: 0
-      width: 100%
 
-    input[type="text"]
-      margin: 0
+      a
+        padding: 2em 2.5em
+
+      i
+        color: map-get($colors, green)
+
+#new-challenge
+  background: map-get($colors, white-dark)
+
+  .wrapper
+    padding: 30px 0
+
+  .information
+    article
+      h2
+        color: map-get($colors, gray-light)
+        margin-bottom: 1em
+
+        span
+          color: map-get($colors, green)
+          margin-right: 0.3em
+
+  .form

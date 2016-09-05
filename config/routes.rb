@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :admins
-  root to: 'registration#show'
+  root to: 'home#show'
 
   resource :contact, only: :create
   resource :challenge, only: :create
