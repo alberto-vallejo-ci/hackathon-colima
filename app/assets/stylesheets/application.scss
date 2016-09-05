@@ -1,26 +1,39 @@
 $enable-flex: true;
-$grid-breakpoints: (
-  xs: 0,
-  sm: 544px,
-  smplus: 667px,
-  md: 768px,
-  lg: 992px,
-  mdplus: 1024px,
-  xl: 1200px
-);
 
-$container-max-widths: (
-  sm: 576px,
-  smplus: 680px,
-  md: 720px,
-  lg: 940px,
-  xl: 1140px
-);
-
-@import 'common/variables';
-@import 'mixins/*';
+@import 'variables';
 @import 'bootstrap/scss/bootstrap';
-@import 'components/*';
-@import 'elements/*';
-@import 'sections/*';
+@import 'application/*';
 @import 'font-awesome';
+
+@include media-breakpoint-down(sm) {
+  html{ font-size: 10px };
+};
+
+html, body {
+  height: 100%;
+};
+
+body {
+  font-family: 'Open Sans', sans-serif
+};
+
+ul {
+  list-style: none;
+};
+
+strong {
+  color: map-get($colors, green);
+};
+
+.container .wrapper {
+  padding: 3rem 0
+};
+
+.slogan {
+  display: flex;
+  align-items: center;
+  i {
+    margin: 0 0.3em;
+    color: map-get($colors, green);
+  };
+};

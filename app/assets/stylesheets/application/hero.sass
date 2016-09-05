@@ -1,0 +1,43 @@
+#hero
+  background: asset_url('welcome-image-2.jpg') no-repeat center center fixed
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+  min-height: 40rem
+  position: relative
+  .cover
+    background: rgba(0,0,0,0.4)
+    width: 100%
+    height: 100%
+  .container
+    display: flex
+    flex-flow: column
+    padding: 3rem 0
+  .logo
+    display: flex
+    justify-content: center
+    margin-bottom: 1rem
+    img
+      height: 20rem
+  .date
+    display: flex
+    flex-flow: column
+    align-items: center
+    font-size: 3rem
+    color: map-get($colors, white)
+    span
+      text-align: center
+  .actions
+    display: flex
+    flex-flow: row wrap-reverse
+    justify-content: center
+    margin: 1rem 0
+    a
+      margin: 0.5em 1em
+      padding: 1em 3em
+
+  .slogan
+    color: map-get($colors, white)
+    justify-content: center
+    font-size: 1.5em

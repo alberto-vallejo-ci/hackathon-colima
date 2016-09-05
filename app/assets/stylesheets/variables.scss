@@ -1,0 +1,16 @@
+$colors: (
+  white: #f5f2f2,
+  white-dark: #f1f1f1,
+  gray-light: #acabab,
+  gray: #999999,
+  gray-dark: #333333,
+  green-light: lighten(#29b573, 10%),
+  green: #29b573,
+  green-dark: #3ac367,
+  black-dark: #1b1919
+);
+
+// Bootstrap
+
+$brand-primary: map-get($colors, green);
+$brand-info:    map-get($colors, green-light);

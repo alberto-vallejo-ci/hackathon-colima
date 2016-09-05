@@ -9,12 +9,11 @@ html
     meta(http-equiv="cleartype" content="on")
     title HackColima
     script src="//maps.googleapis.com/maps/api/js?v=3.exp&key=#{GOOGLE_MAP_API_KEY}&libraries=places"
-    link href='//fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500' media='screen' rel='stylesheet'
+    link href='//fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,800' media='screen' rel='stylesheet'
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
   body(ng-app='application')
-    flash-messages
     = yield
     = render 'layouts/analytics'
