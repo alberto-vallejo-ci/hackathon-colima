@@ -1,18 +1,15 @@
-section(ng-parallax pattern="'#{image_url('dark-forest.jpg')}'")
-  .header
-    header.header--container
-      h1 Retos
-      h2= render 'slogan', words: %w(Ideas Personas)
-
 section#challenges
   .container
     .wrapper
       .row
         .col-md-12
+          h2 Ideas y Proyectos
+          = render 'slogan', words: %w(Ideas Personas)
+      .row
+        .col-md-12
           .categories
             span Categorías
             = categories_list
-
       .list.row
         = render partial: 'home/challenges/challenge', collection: @home.challenges, as: :challenge
         = render partial: 'home/challenges/new'

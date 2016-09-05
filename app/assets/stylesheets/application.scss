@@ -2,7 +2,6 @@ $enable-flex: true;
 
 @import 'variables';
 @import 'bootstrap/scss/bootstrap';
-@import 'application/*';
 @import 'font-awesome';
 
 @include media-breakpoint-down(sm) {
@@ -37,3 +36,5 @@ strong {
     color: map-get($colors, green);
   };
 };
+
+@import 'application/*';
