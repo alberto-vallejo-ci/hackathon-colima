@@ -4,9 +4,8 @@ section#hero
       .logo
         = image_tag 'logo.svg'
       .date
-        span Septiembre 30 - Octubre 02
+        span Octubre 2016
       .actions
-        a.btn.btn-primary(href='#about') Más información
         a.btn.btn-primary(href='http://nvite.co/ae74' target='_blank') Registro
       .slogan
         span Innovación
@@ -23,6 +22,7 @@ section#about
             |Es un evento que reúne <strong>estudiantes, profesionales y emprendedores</strong> con el objetivo de desarrollar soluciones a problemáticas sociales.
             |En este año, la temática será <strong>Medio Ambiente</strong>.
           p Inscríbete, registra una idea innovadora y sé parte de los 150 que lograremos un cambio positivo en el planeta.
+      hr
       article.row
         .content.col-md-6
           p
@@ -37,19 +37,32 @@ section#banner
   .container
     .wrapper
       .row
-        .col-md-6
+        .col-md-8
           article
             h2 Innovación + Planeta
-            p
-              |Se puede reducir el consumo de automóviles por medio del carpooling.
+            blockquote
+              p
+                |El concepto de sostenibilidad define la capacidad de satisfacer
+                |las necesidades de la presente población local, sin comprometer
+                |la capacidad de las generaciones futuras o de poblaciones de otras
+                |localidades para satisfacer sus necesidades.
+                br
+                br
+                |¿En qué medida son sostenibles las prácticas actuales?
+              footer
+                |http://www.greenfacts.org/es/
+        .register.col-md-4
+          .commit-logo
+            a(href='http://commit.mx' target='blank')
+              = image_tag 'commit-logo.svg', 'svg' => true
           .hashtag #HackColima2016
-        .register.col-md-6
-          a.btn.btn-primary(href='http://nvite.com/ae74') Registro
+          .actions
+            a.btn.btn-primary(href='http://nvite.com/ae74') Registro
 
 = render '/challenges/index'
 = render '/challenges/new'
 
-section#banner.nature-1
+section#banner.quote.nature-1
   .container
     .wrapper
       blockquote

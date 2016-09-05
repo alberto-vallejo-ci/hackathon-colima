@@ -12,8 +12,12 @@
     flex-flow: column
     justify-content: center
     padding: 2em
+    blockquote
+      p
+        text-align: justify
+
   .hashtag
-    font-size: 3em
+    font-size: 2em
     text-align: center
     color: map-get($colors, gray-light)
   .register
@@ -21,13 +25,27 @@
     flex-flow: column
     align-items: center
     justify-content: center
-    a
-      font-size: 2em
-      padding: 0.5em 2em
-  blockquote
-    p
-      text-align: center
-      font-size: 2.5em
-    footer
-      text-align: right
-      font-size: 1em
+    & > *
+      margin-bottom: 0.4em
+    & > *:last-child
+      margin-bottom: 0
+    .commit-logo
+      a
+        text-decoration: none
+      svg, img
+        width: 14em
+        height: 6em
+        path, polygon
+          fill: #444
+    .actions
+      a
+        font-size: 1.5em
+        padding: 0.5em 2em
+  &.quote
+    blockquote
+      p
+        text-align: center
+        font-size: 2.5em
+      footer
+        text-align: right
+        font-size: 1em

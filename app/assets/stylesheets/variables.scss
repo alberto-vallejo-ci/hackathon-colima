@@ -7,4 +7,8 @@ $colors: (
   green: #29B573,
   green-dark: #3AC367,
   black-dark: #1B1919
-)
+);
+
+// Bootstrap
+
+$brand-primary: map-get($colors, green);
