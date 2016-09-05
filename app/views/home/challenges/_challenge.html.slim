@@ -1,0 +1,11 @@
+.challenge-container
+  .challenge
+    .title-container
+      p= challenge.name
+      p= 'Tecnologia'
+
+    p.description
+      = truncate(challenge.description, length: 150)
+
+    .button-container
+      = link_to  'Dime más', '#', class: 'main-btn'

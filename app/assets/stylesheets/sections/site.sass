@@ -17,6 +17,28 @@ body
 section[role=navigation]
   background: map-get($colors, white)
 
+  .image-container
+    @extend .col-md-4
+    text-align: center
+
+  .message-container
+    @extend .col-md-8
+    margin: 0 0 3% 0
+    p
+      font-size: 18px
+      letter-spacing: 2px
+      text-align: right
+      span
+        color: map-get($colors, green)
+
+.section-wrapper
+  margin: 0 auto
+  max-width: 1160px
+
+.row-wrapper
+  @extend .row
+  margin: 0
+
 .main-btn
   background: map-get($colors, green)
   color: map-get($colors, white)
