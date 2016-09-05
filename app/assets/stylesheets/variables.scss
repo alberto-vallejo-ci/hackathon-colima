@@ -4,6 +4,7 @@ $colors: (
   gray-light: #acabab,
   gray: #999999,
   gray-dark: #333333,
+  green-light: lighten(#29b573, 10%),
   green: #29b573,
   green-dark: #3ac367,
   black-dark: #1b1919
@@ -12,3 +13,4 @@ $colors: (
 // Bootstrap
 
 $brand-primary: map-get($colors, green);
+$brand-info:    map-get($colors, green-light);
