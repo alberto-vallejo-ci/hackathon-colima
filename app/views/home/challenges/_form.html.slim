@@ -15,24 +15,33 @@ section#new-challenge(ng-if='ui.registerChallenge' ng-cloak)
             .form-group
               input.form-control(type='number' placeholder='Teléfono de contacto')
             .form-group
-              textarea.form-control(placeholder='¿Qué quieres lograr?')
+              textarea.form-control(placeholder='¿Qué quieres lograr? (problemática)')
             .form-group
-              textarea.form-control(placeholder='Cómo lo piensas lograr?')
-            .form-group
-              textarea.form-control(placeholder='¿Qué perfiles crees que necesitas para tu equipo? (programador, diseñador, ...)')
+              textarea.form-control(placeholder='¿Cómo lo piensas lograr? (algo tangible que piensen desarrollar)')
             .form-group
               = select_tag 'category', options_from_collection_for_select(categories, 'id', 'name'), class: 'form-control', include_blank: true
+            fieldset.form-group
+              legend ¿Estás buscando personas para tu equipo?
+              .radio
+                label.form-check-inline
+                  input.form-check-input(type='radio' ng-model='ui.looksForTeam' name='looksForTeam' value='si')
+                  |  Sí
+                label.form-check-inline
+                  input.form-check-input(type='radio' ng-model='ui.looksForTeam' name='looksForTeam' value='no')
+                  |  No
+            .form-group(ng-cloak='true' ng-if='ui.looksForTeam == "si"')
+              textarea.form-control(placeholder='¿Qué perfiles crees que necesitas para tu equipo? (programador, diseñador, ...)')
             fieldset.form-group
               legend ¿Sabes dónde lo vas a implementar?
               .radio
                 label.form-check-inline
-                  input.form-check-input(type='radio' ng-model='knowsWhere' name='knowsWhere' value='si')
+                  input.form-check-input(type='radio' ng-model='ui.knowsWhere' name='knowsWhere' value='si')
                   |  Sí
                 label.form-check-inline
-                  input.form-check-input(type='radio' ng-model='knowsWhere' name='knowsWhere' value='no')
+                  input.form-check-input(type='radio' ng-model='ui.knowsWhere' name='knowsWhere' value='no')
                   |  No
-            .form-group
-              input.form-control(type='text' ng-cloak='true' ng-if='knowsWhere == "si"' placeholder='Estado, Municipio, Localidad')
+            .form-group(ng-cloak='true' ng-if='ui.knowsWhere == "si"')
+              input.form-control(type='text' placeholder='Estado, Municipio, Localidad')
             .form-group.text-xs-right
               a.btn.btn-secondary(href='javascript:void(0)' ng-click='ui.registerChallenge = false') Cancelar
               input.btn.btn-primary(type='submit' value='Enviar a Revisión')
