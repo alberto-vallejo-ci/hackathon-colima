@@ -1,14 +1,15 @@
 flash-messages
   position: fixed
   width: 100%
-  top: 1rem
   z-index: 9999
-  @include flex-box
+  display: flex
   justify-content: center
   align-items: center
   flex-direction: column
   [flash-message]
-    font-size: 2rem
-    margin: .1em 0
+    padding: 1rem 0
     cursor: pointer
     text-align: center
+    width: 100%
+    &.bg-success
+      border-bottom: map-get($colors, green-dark) solid 1px

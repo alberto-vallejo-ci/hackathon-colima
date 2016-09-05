@@ -6,7 +6,9 @@ application.controller('ContactFormController', function($scope, $http, FlashMes
     vm.onSubmit = function(){
         if(vm.form.$valid){
             $http.post('/contact', {contact: vm.contact}).then(function(response) {
-                FlashMessage.create({ text: 'Su mensaje se ha enviado correctamente :)', type: 'success'});
+                FlashMessage.create({ text: 'Su mensaje se ha enviado correctamente', type: 'success'});
+                vm.contact = {}
+                vm.form.$setPristine(true);
             }, function errorCallback(response) {
                 FlashMessage.create({ text: 'Ocurrió un error inesperado, por favor intente de nuevo', type: 'alert'});
             });

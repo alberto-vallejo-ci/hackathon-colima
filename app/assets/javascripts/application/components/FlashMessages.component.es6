@@ -5,8 +5,8 @@ application.component('flashMessages', {
         let vm = this
 
         vm.classMap = {
-            alert: 'label-danger',
-            success: 'label-success'
+            alert: 'bg-danger',
+            success: 'bg-success'
         }
 
         vm.messages = FlashMessage.getMessages();
