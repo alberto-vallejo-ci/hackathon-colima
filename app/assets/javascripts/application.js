@@ -17,6 +17,9 @@
 //= require ng-simple-parallax/js/ngParallax
 //= require jquery-sticky/jquery.sticky
 //= require angular-rails-templates
+//= require_self
 //= require_tree ./application
 //= require_tree ./templates
 //= require_tree ./sections
+
+window.application = angular.module('application', ['templates', 'ngParallax']);
