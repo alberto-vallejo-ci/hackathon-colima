@@ -8,12 +8,11 @@ Category.create(name: 'Arquitectura sustentable', icon: 'arquitectura')
 Category.create(name: 'Innovación tecnológica', icon: 'innovacion')
 Category.create(name: 'Eco tecnologías', icon: 'ecotec')
 Category.create(name: 'Turismo sustentable', icon: 'turismo')
+Category.create(name: 'Energías renovables', icon: 'energia')
 Category.create(name: 'Biodiversidad', icon: 'biodiversidad')
 Category.create(name: 'Educación ambiental', icon: 'educacion')
 Category.create(name: 'Agua', icon: 'agua')
 Category.create(name: 'Sector primario', icon: 'primario')
-Category.create(name: 'Energia', icon: 'energia')
-
 
 # ---------------------------
 # CHALLENGES
