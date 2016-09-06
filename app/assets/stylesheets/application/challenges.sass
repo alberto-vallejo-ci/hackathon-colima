@@ -13,7 +13,9 @@
         margin: 0 0.5em
         width: 2em
         &.active
-          background: map-get($colors, green)
+          svg #MainObject
+            &, *
+              fill: map-get($colors, green)
 
   .list
     .challenge.hidden
