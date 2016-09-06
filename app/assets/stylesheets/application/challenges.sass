@@ -22,25 +22,45 @@
       display: none
     article
       margin-bottom: 1.5em
+      position: relative
+      display: flex
+      flex-flow: column
+      height: 17rem
+      .modal
+        article
+          height: inherit
       header
-        align-items: center
         display: flex
         margin-bottom: 1em
         .icon
-          flex: 1 0 auto
           width: 4em
         .title
-          flex: 10 0 auto
           margin-left: 0.4em
           p
+            text-overflow: ellipsis
+            overflow: hidden
+
             margin: 0
           .name
             font-size: 1.25em
           .category
             font-size: 1em
-      .actions a
-        box-shadow: map-get($colors, gray) 1px 1px 1px 1px
-        padding: 5px 20px
+      p
+        color: map-get($colors, gray)
+        line-height: 1.2em
+        word-wrap: break-word
+      .requirements
+        margin: 1em
+        .tag
+          margin-right: 0.5em
+          padding: 1em
+          font-weight: normal
+      .actions
+        position: absolute
+        bottom: 0
+        a
+          box-shadow: map-get($colors, gray) 1px 1px 1px 1px
+          padding: 5px 20px
 
     .new-challenge
       align-items: center

@@ -1,11 +1,39 @@
 .col-sm-6.col-md-3.challenge{ data={ value: challenge.category_icon } }
   article
     header
-      .icon= image_tag("iconos/#{challenge.category_icon}.svg")
-      .flex
+      .icon
+        = image_tag("iconos/#{challenge.category_icon}.svg")
       .title
-        p.name{ title= challenge.title }= truncate(challenge.title, length: 20)
-        p.category{ title= challenge.category_name }= truncate(challenge.category_name, length: 20)
-    p= truncate(challenge.description, length: 150)
+        h3{ title= challenge.title }= challenge.title
+        p.category{ title= challenge.category_name }= challenge.category_name
+    p= truncate(challenge.description_how, length: 150)
     .actions
-      a.btn.btn-primary(href='#') Dime más
+      button.btn.btn-primary(data-toggle="modal" data-target="[role=challenge-dialog][data-id=#{challenge.id}]") Dime más
+
+    .modal.fade(data-id='#{challenge.id}' tabindex="-1" role="challenge-dialog" aria-labelledby="challenge-modal-article" aria-hidden="true")
+      .modal-dialog.modal-lg
+        article.challenge.modal-content
+          .modal-header
+            button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+              span(aria-hidden="true") &times;
+            header
+              .icon= image_tag("iconos/#{challenge.category_icon}.svg")
+              .flex
+              .title
+                h2= challenge.title
+                p.category= challenge.category_name
+          .modal-body
+            h5 Lo que quiere resolver
+            p= challenge.description
+            h5 Como lo piensa solucionar
+            p= challenge.description_how
+            - if challenge.location.present?
+              h5 Donde se piensa implementar
+              p= challenge.location
+            - if challenge.is_looking_for_team && challenge.profile_requirements.present?
+              h5 Este equipo esta buscando un equipo con las siguientes características
+              .requirements
+                - challenge.profile_requirements.split(',').each do |requirement|
+                  span.tag.tag-success= requirement.strip
+            h5 Contacta al líder de equipo
+            p #{ challenge.owner_name }, #{ challenge.owner_email }

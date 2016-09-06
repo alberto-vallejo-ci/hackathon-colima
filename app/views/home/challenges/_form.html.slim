@@ -27,7 +27,7 @@ section#new-challenge(ng-if='ui.registerChallenge' ng-cloak)
                   div(ng-message='minlength, maxlength, number') Proporciona un número telefónico de contacto válido
 
             fieldset
-              legend Datos del retoas
+              legend Datos del reto
               .form-group
                 textarea.form-control(placeholder='¿Qué quieres lograr? (problemática)' name='description' ng-model='challenge.description' minlength='40' required)
                 .text-danger(ng-messages="form.description.$error" role="alert" ng-if='form.description.$dirty && form.description.$invalid' ng-cloak)
