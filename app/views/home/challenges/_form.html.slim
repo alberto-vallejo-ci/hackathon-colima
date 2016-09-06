@@ -1,4 +1,4 @@
-section#new-challenge(ng-if='ui.registerChallenge' ng-cloak)
+section#new-challenge(ng-show='ui.registerChallenge' ng-cloak)
   .container
     .wrapper
       .row
@@ -37,7 +37,9 @@ section#new-challenge(ng-if='ui.registerChallenge' ng-cloak)
                 .text-danger(ng-messages="form.descriptionHow.$error" role="alert" ng-if='form.descriptionHow.$dirty && form.descriptionHow.$invalid' ng-cloak)
                   div(ng-message='minlength, required') Describe la solución a implementar en al menos 40 caracteres
               .form-group
-                = select_tag('category', options_from_collection_for_select(categories, 'id', 'name'), class: 'form-control', include_blank: true, 'ng-model' => 'challenge.category_id')
+                = select_tag('category', options_from_collection_for_select(categories, 'id', 'name'), class: 'form-control', include_blank: 'Selecciona una categoría', 'ng-model' => 'challenge.category_id', 'required' => true)
+                .text-danger(ng-messages="form.category.$error" role="alert" ng-if='form.category.$dirty && form.category.$invalid' ng-cloak)
+                  div(ng-message='required') Selecciona la categoría que creas que puede corresponder a tu reto
               .form-group
                 textarea.form-control(placeholder='Opcional: ¿Necesitas algo más? (datos, sensores, documentos, etc.)' name='assets' ng-model='challenge.assets')
               fieldset.form-group
@@ -70,5 +72,5 @@ section#new-challenge(ng-if='ui.registerChallenge' ng-cloak)
                   div(ng-message='required') Proporciona el lugar donde implementarás tu solución
 
             .form-group.text-xs-right
-              a.btn.btn-secondary(href='javascript:void(0)' ng-click='ui.registerChallenge = false') Cancelar
-              input.btn.btn-primary(type='submit' ng-disabled='form.$invalid' value='Enviar a Revisión')
+              a.cancel(href='javascript:void(0)' ng-click='ui.registerChallenge = false') Cancelar
+              input.btn.btn-primary(type='submit' ng-disabled='form.$invalid' value='Registrar Reto')

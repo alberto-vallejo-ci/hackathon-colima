@@ -1,7 +1,16 @@
-application.controller('ChallengeFormController', function($scope, $http, FlashMessage) {
+application.controller('ChallengeFormController', function($scope, $http, FlashMessage, $location, $rootScope) {
   var vm = $scope;
+  vm.ui = vm.ui || {};
+  $rootScope.ui = $rootScope.ui || {};
 
-  vm.challenge = {}
+  if($location.url() == '/new-challenge'){
+      $rootScope.ui.registerChallenge = true;
+  }
+
+  vm.challenge = {
+      is_looking_for_team: true
+  }
+  vm.ui.knowsLocation = true
 
   vm.onSubmit = function() {
       console.log(vm.challenge);
