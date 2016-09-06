@@ -1,4 +1,4 @@
-application.controller('ContactFormController', function($scope, $http, FlashMessage){
+application.controller('ContactFormController', ['$scope', '$http', 'FlashMessage', function($scope, $http, FlashMessage){
     var vm = $scope;
 
     vm.contact = {}
@@ -16,4 +16,4 @@ application.controller('ContactFormController', function($scope, $http, FlashMes
             FlashMessage.create({ text: 'Por favor, verifique que su información es correcta e inténtelo de nuevo', type: 'alert'});
         };
     }
-})
+}])

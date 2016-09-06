@@ -1,4 +1,4 @@
-application.controller('ChallengeFormController', function($scope, $http, FlashMessage, $location, $rootScope) {
+application.controller('ChallengeFormController', ['$scope', '$http', 'FlashMessage', '$location', '$rootScope', function($scope, $http, FlashMessage, $location, $rootScope) {
   var vm = $scope;
   vm.ui = vm.ui || {};
   $rootScope.ui = $rootScope.ui || {};
@@ -24,4 +24,4 @@ application.controller('ChallengeFormController', function($scope, $http, FlashM
          }
        );
   }
-});
+}]);
