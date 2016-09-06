@@ -12,8 +12,12 @@
       li
         margin: 0 0.5em
         width: 2em
+        &.active
+          background: map-get($colors, green)
 
   .list
+    .challenge.hidden
+      display: none
     article
       margin-bottom: 1.5em
       header
