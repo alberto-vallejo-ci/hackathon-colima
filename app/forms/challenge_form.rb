@@ -11,6 +11,7 @@ class ChallengeForm
   attribute :is_looking_for_team, Boolean
   attribute :profile_requirements, String
   attribute :location, String
+  attribute :category_id, Integer
 
   validates :title, :description, presence: true
 
@@ -26,7 +27,6 @@ class ChallengeForm
   def save!
     return unless valid?
     challenge.assign_attributes attributes
-    challenge.category_id = 1
     challenge.save!
   end
 end
