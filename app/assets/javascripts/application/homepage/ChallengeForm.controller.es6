@@ -5,13 +5,14 @@ application.controller('ChallengeFormController', function($scope, $http, FlashM
 
   vm.onSubmit = function() {
       console.log(vm.challenge);
-    //   $http.post('/challenge', { challenge: vm.challenge }).then(
-    //     function(response) {
+       $http.post('/challenge', { challenge: vm.challenge }).then(
+         function(response) {
+         window.location.reload();
     //       FlashMessage.create({ text: 'El Reto hs sido guardado exitosamente!', type: 'success' });
-    //     },
-    //     function errorCallback(response) {
+         },
+         function errorCallback(response) {
     //       FlashMessage.create({ text: 'Ocurrió un error inesperado, por favor intente de nuevo', type: 'alert' });
-    //     }
-    //   );
+         }
+       );
   }
 });

@@ -1,15 +1,16 @@
 class CreateChallenges < ActiveRecord::Migration
   def change
     create_table :challenges do |t|
-      t.string :name, null: false
-      t.string :owner, null: false
-      t.string :email, null: false
-      t.string :telephone
-      t.string :profiles
-      t.text   :target, null: false
-      t.text   :planning
-      t.text   :description, null: false
-      t.boolean :implementation, null: false, default: true
+      t.string :title, null: false
+      t.string :owner_name, null: false
+      t.string :owner_email, null: false
+      t.string :owner_phone
+      t.string :description
+      t.string :description_how
+      t.boolean :is_looking_for_team
+      t.string :profile_requirements
+      t.string :assets
+      t.string :location
 
       t.timestamps
     end

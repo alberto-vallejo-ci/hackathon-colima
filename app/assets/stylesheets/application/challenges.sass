@@ -12,27 +12,40 @@
       li
         margin: 0 0.5em
         width: 2em
+
   .list
     article
       margin-bottom: 1.5em
       header
-        display: flex
         align-items: center
+        display: flex
         margin-bottom: 1em
         .icon
-          width: 4em
           flex: 1 0 auto
+          width: 4em
         .title
           flex: 10 0 auto
           margin-left: 0.4em
+          p
+            margin: 0
+          .name
+            font-size: 1.25em
+          .category
+            font-size: 1em
+      .actions a
+        box-shadow: map-get($colors, gray) 1px 1px 1px 1px
+        padding: 5px 20px
+
     .new-challenge
-      background-color: map-get($colors, white-dark)
-      margin: 1em
-      display: flex
       align-items: center
-      justify-content: center
+      background-color: map-get($colors, white-dark)
+      display: flex
       font-size: 2em
-      padding: 2em
+      justify-content: center
+      margin: 1em
+      padding: 0
+      a
+        padding: 2em 2.5em
       i
         color: map-get($colors, green)
 

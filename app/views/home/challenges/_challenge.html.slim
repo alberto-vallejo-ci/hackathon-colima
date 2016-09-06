@@ -4,8 +4,8 @@
       .icon= image_tag("iconos/#{challenge.category_icon}.svg")
       .flex
       .title
-        p.name{ title= challenge.name }= truncate(challenge.name, length: 20)
+        p.name{ title= challenge.title }= truncate(challenge.title, length: 20)
         p.category{ title= challenge.category_name }= truncate(challenge.category_name, length: 20)
     p= truncate(challenge.description, length: 150)
     .actions
-      a.main-btn(href='#') Dime más
+      a.btn.btn-primary(href='#') Dime más

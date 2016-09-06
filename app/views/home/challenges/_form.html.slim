@@ -10,6 +10,7 @@ section#new-challenge(ng-if='ui.registerChallenge' ng-cloak)
               input.form-control(type='text' name='title' ng-model='challenge.title' required minlength='4' placeholder='Título de la idea o proyecto')
               .text-danger(ng-messages="form.title.$error" role="alert" ng-if='form.title.$dirty && form.title.$invalid' ng-cloak)
                 div(ng-message='required, minlength') El título debe tener al menos 4 caracteres
+
             fieldset
               legend Datos de quien registra
               .form-group
@@ -24,8 +25,9 @@ section#new-challenge(ng-if='ui.registerChallenge' ng-cloak)
                 input.form-control(type='number' minlength='10' maxlength='10' name='ownerPhone' ng-model='challenge.owner_phone' placeholder='Teléfono de contacto')
                 .text-danger(ng-messages="form.ownerPhone.$error" role="alert" ng-if='form.ownerPhone.$dirty && form.ownerPhone.$invalid' ng-cloak)
                   div(ng-message='minlength, maxlength, number') Proporciona un número telefónico de contacto válido
+
             fieldset
-              legend Datos del reto
+              legend Datos del retoas
               .form-group
                 textarea.form-control(placeholder='¿Qué quieres lograr? (problemática)' name='description' ng-model='challenge.description' minlength='40' required)
                 .text-danger(ng-messages="form.description.$error" role="alert" ng-if='form.description.$dirty && form.description.$invalid' ng-cloak)
@@ -66,6 +68,7 @@ section#new-challenge(ng-if='ui.registerChallenge' ng-cloak)
                 input.form-control(type='text' placeholder='Estado, Municipio, Localidad' name='location' ng-model='challenge.location' ng-required='ui.knowsLocation == "true"')
                 .text-danger(ng-messages="form.location.$error" role="alert" ng-if='form.location.$dirty && form.location.$invalid' ng-cloak)
                   div(ng-message='required') Proporciona el lugar donde implementarás tu solución
+
             .form-group.text-xs-right
               a.btn.btn-secondary(href='javascript:void(0)' ng-click='ui.registerChallenge = false') Cancelar
               input.btn.btn-primary(type='submit' ng-disabled='form.$invalid' value='Enviar a Revisión')

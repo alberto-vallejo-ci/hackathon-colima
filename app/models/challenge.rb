@@ -8,6 +8,5 @@ class Challenge < ActiveRecord::Base
   # ----------------
   # VALIDATIONS
   # ----------------
-  validates :name, :description, :owner, :email, :target, :description, :implementation,
-            presence: true
+  validates :title, :owner_name, :owner_email, :description, presence: true
 end
