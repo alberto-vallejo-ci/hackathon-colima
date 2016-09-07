@@ -7,9 +7,10 @@ section#new-challenge(name='/new-challenge' ng-show='ui.registerChallenge' ng-cl
         .form.col-sm-6(ng-controller='ChallengeFormController')
           form(novalidate name='form' ng-submit='onSubmit()')
             .form-group
-              input.form-control(type='text' name='title' ng-model='challenge.title' required minlength='4' placeholder='Título de la idea o proyecto')
+              input.form-control(type='text' name='title' ng-model='challenge.title' required minlength='4' maxlength='60' placeholder='Título de la idea o proyecto')
               .text-danger(ng-messages="form.title.$error" role="alert" ng-if='form.title.$dirty && form.title.$invalid' ng-cloak)
                 div(ng-message='required, minlength') El título debe tener al menos 4 caracteres
+                div(ng-message='maxlength') El título debe tener al máximo 60 caracteres
 
             fieldset
               legend Datos de quien registra
@@ -24,8 +25,7 @@ section#new-challenge(name='/new-challenge' ng-show='ui.registerChallenge' ng-cl
               .form-group
                 input.form-control(type='number' minlength='10' maxlength='10' name='ownerPhone' ng-model='challenge.owner_phone' placeholder='Teléfono de contacto')
                 .text-danger(ng-messages="form.ownerPhone.$error" role="alert" ng-if='form.ownerPhone.$dirty && form.ownerPhone.$invalid' ng-cloak)
-                  div(ng-message='minlength, maxlength, number') Proporciona un número telefónico de contacto válido
-
+                  div(ng-message='minlength, maxlength, number') Proporciona los 10 dígitos de tu número telefónico para poder ponernos en contacto contigo
             fieldset
               legend Datos del reto
               .form-group
@@ -72,5 +72,5 @@ section#new-challenge(name='/new-challenge' ng-show='ui.registerChallenge' ng-cl
                   div(ng-message='required') Proporciona el lugar donde implementarás tu solución
 
             .form-group.text-xs-right
-              a.cancel(href='javascript:void(0)' ng-click='ui.registerChallenge = false') Cancelar
-              input.btn.btn-primary(type='submit' ng-disabled='form.$invalid' value='Registrar Reto')
+              a.cancel(href='javascript:void(0)' ng-click='cancel()') Cancelar
+              input.btn.btn-primary(type='submit' ng-disabled='ui.disableSubmit || form.$invalid' value='Registrar Reto')

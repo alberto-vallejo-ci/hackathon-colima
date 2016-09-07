@@ -9,6 +9,9 @@ section#contact
         .map.col-sm-6
           div(google-map lat='19.2626194' lng='-103.7237538' zoom='15' title='"HackColima - Instituto Tecnológico de Colima"')
         .form.col-sm-6(ng-controller='ContactFormController')
+          p
+            |La información que nos proporciones, será enviada a 
+            a(href='mailto:contacto@hackcolima.com') contacto@hackcolima.com
           form(novalidate name='form')
             .form-group
               input.form-control(ng-model='contact.name' name='name' type='text' placeholder='Nombre' required minlength="2")
@@ -25,4 +28,4 @@ section#contact
               .text-danger(ng-messages="form.description.$error" role="alert" ng-if='form.description.$dirty && form.description.$invalid' ng-cloak)
                 div(ng-message='required, minlength') La descripción debe tener al menos 20 caracteres
             .form-group.text-xs-right
-              input.btn.btn-primary(type='submit' value='Enviar' ng-disabled='form.$invalid' ng-click='onSubmit()')
+              input.btn.btn-primary(type='submit' value='Enviar' ng-disabled='ui.disableSubmit || form.$invalid' ng-click='onSubmit()')

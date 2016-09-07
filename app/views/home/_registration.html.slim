@@ -11,7 +11,8 @@ section#banner
           article
             blockquote
               p(ng-bind-html='quote.text')
-              footer(ng-bind='quote.source')
+              footer
+                a(ng-href='{{quote.source}}' target='_blank' ng-bind='quote.source')
         .register.col-md-4
           .commit-logo
             a(href='http://commit.mx' target='blank')

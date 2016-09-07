@@ -7,7 +7,7 @@ application.controller('EnvironmentQuotesController', ['$scope', '$sce', functio
              + '¿Es la pérdida de la biodiversidad irreversible? ¿Es posible reducir la velocidad de este proceso?'),
       source: 'http://www.greenfacts.org/es/'
   }, {
-      text: $sce.trustAsHtml('En las últimas décadas del siglo XX, la calidad del aire ambiente en Europa ha mejorado en muchos sentidos; sin embargo, los niveles de contaminación atmosférica actuales siguen afectando a la salud pública. La contaminación atmosférica puede provocar enfermedades respiratorias y reducir la esperanza de vida.'),
+      text: $sce.trustAsHtml('En las últimas décadas del siglo XX, la calidad del aire en Europa ha mejorado en muchos sentidos; sin embargo, los niveles de contaminación atmosférica actuales siguen afectando a la salud pública. La contaminación atmosférica puede provocar enfermedades respiratorias y reducir la esperanza de vida.'),
       source: 'http://www.greenfacts.org/es/'
   }, {
       text: $sce.trustAsHtml('En los últimos años el aumento del precio del combustible, así como la inquietud sobre el cambio climático y la dependencia del petróleo han puesto la energía en la vanguardia de los debates públicos y de la política.'
