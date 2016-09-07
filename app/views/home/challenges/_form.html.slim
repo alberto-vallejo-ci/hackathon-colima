@@ -1,4 +1,4 @@
-section#new-challenge(name='/new-challenge' ng-show='ui.registerChallenge' ng-cloak)
+section#nuevoreto
   .container
     .wrapper
       .row
@@ -7,7 +7,7 @@ section#new-challenge(name='/new-challenge' ng-show='ui.registerChallenge' ng-cl
         .form.col-sm-6(ng-controller='ChallengeFormController')
           form(novalidate name='form' ng-submit='onSubmit()')
             .form-group
-              input.form-control(type='text' name='title' ng-model='challenge.title' required minlength='4' maxlength='60' placeholder='Título de la idea o proyecto')
+              input.form-control(type='text' name='title' ng-model='challenge.title' required minlength='4' maxlength='60' placeholder='Título del reto')
               .text-danger(ng-messages="form.title.$error" role="alert" ng-if='form.title.$dirty && form.title.$invalid' ng-cloak)
                 div(ng-message='required, minlength') El título debe tener al menos 4 caracteres
                 div(ng-message='maxlength') El título debe tener al máximo 60 caracteres

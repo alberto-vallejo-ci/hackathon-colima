@@ -3,17 +3,12 @@ application.controller('ChallengeFormController', ['$scope', '$http', 'FlashMess
   vm.ui = vm.ui || {};
   $rootScope.ui = $rootScope.ui || {};
 
-  if($location.url() == '/new-challenge'){
-      $rootScope.ui.registerChallenge = true;
-  }
-
   vm.challenge = {
       is_looking_for_team: true
   }
   vm.ui.knowsLocation = true
 
   vm.cancel = function(){
-      $rootScope.ui.registerChallenge = false;
       vm.resetForm();
   }
 

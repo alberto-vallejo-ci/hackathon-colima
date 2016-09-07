@@ -16,5 +16,6 @@ html
 
   body(ng-app='application')
     flash-messages
-    = yield
+    div(ng-controller='MainController')
+      = yield
     = render 'layouts/analytics'
