@@ -33,9 +33,16 @@
     flex-flow: row wrap-reverse
     justify-content: center
     margin: 1rem 0
-    a
+    & > a, .nvite-btn
       margin: 0.5em 1em
+    & > a, .nvite-btn > button
+      font-size: 1em
+      line-height: 1
       padding: 1em 3em
+      background-color: map-get($colors, green)
+      text-transform: none
+    .nvite-btn > button i
+      padding: 1em .8em
 
   .slogan
     color: map-get($colors, white)
