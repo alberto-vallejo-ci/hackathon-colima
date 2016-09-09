@@ -18,6 +18,9 @@ body {
 
 ul {
   list-style: none;
+  &.dotted {
+    list-style: circle;
+  }
 };
 
 strong {
