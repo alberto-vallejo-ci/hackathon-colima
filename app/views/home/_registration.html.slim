@@ -2,7 +2,7 @@ section#banner
   .container
     .wrapper
       .row
-        .col-md-8(ng-controller='EnvironmentQuotesController')
+        .col-md-6(ng-controller='EnvironmentQuotesController')
           h2
             .slogan
               span Innovación
@@ -13,7 +13,7 @@ section#banner
               p(ng-bind-html='quote.text')
               footer
                 a(ng-href='{{quote.source}}' target='_blank' ng-bind='quote.source')
-        .register.col-md-4
+        .register.push-md-2.col-md-4
           .commit-logo
             a(href='http://commit.mx' target='blank')
               = image_tag 'commit-logo.svg', 'svg' => true
