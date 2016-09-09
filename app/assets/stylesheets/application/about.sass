@@ -3,10 +3,14 @@
     display: flex
     align-items: center
     justify-content: center
+    margin-bottom: 1em
   .content
     text-align: justify
-    padding: 2em
   hr
     width: 100%
-  article:last-child
+  article
+    padding: 2em
+  article:nth-child(odd)
     flex-wrap: wrap-reverse
+  article:nth-child(3)
+    flex-wrap: wrap
