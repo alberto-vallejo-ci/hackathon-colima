@@ -14,3 +14,30 @@
     flex-wrap: wrap-reverse
   article:nth-child(3)
     flex-wrap: wrap
+
+  .sponsors
+    h2
+      margin-top: 0.5rem
+    ul
+      display: flex
+      justify-content: space-around
+      margin: 0 3em
+      flex-flow: row wrap
+      li
+        display: flex
+        align-items: center
+        margin: 2em
+        &[data-name='itc'] img
+          height: 7em
+        &[data-name='bts'] img
+          height: 7em
+        &[data-name='toptal']
+          margin: 0
+          img
+            height: 11em
+        &[data-name='casserole'] img
+          height: 5em
+        &[data-name='queue'] img
+          height: 4em
+        &[data-name='ecotenaces'] img
+          height: 6em
