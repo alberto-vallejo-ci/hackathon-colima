@@ -19,6 +19,4 @@ section#challenges
 
       .row.list
         = render partial: 'home/challenges/challenge', collection: @home.challenges, as: :challenge
-        = render partial: 'home/challenges/new'
-
-= render partial: 'home/challenges/form', locals: { categories: @home.categories }
+        = render 'home/challenges/new'
