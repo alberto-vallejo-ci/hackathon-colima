@@ -6,6 +6,9 @@
     -o-background-size: cover
     background-size: cover
     color: map-get($colors, white)
+    @include media-breakpoint-down(sm)
+      background: asset_url('nat-1.jpg') no-repeat center bottom
+      background-size: cover
   background: map-get($colors, white)
   article
     display: flex
