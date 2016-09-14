@@ -23,14 +23,16 @@ application.controller('ChallengeFormController', ['$scope', '$http', 'FlashMess
   vm.onSubmit = function() {
       console.log(vm.challenge);
       vm.ui.disableSubmit = true
-       $http.post('/challenge', { challenge: vm.challenge }).then(
-           function(response) {
-               window.location.reload();
-           },
-           function errorCallback(response) {
-               FlashMessage.create({ text: 'Ocurrió un error inesperado, por favor intente de nuevo', type: 'alert' });
-           }
-       ).finally(function(){ vm.ui.disableSubmit = false });
+      $('#nuevoreto').modal('hide')
+      $('#confirmation').modal('show')
+    //   $http.post('/challenge', { challenge: vm.challenge }).then(
+    //      function(response) {
+    //          window.location.reload();
+    //      },
+    //      function errorCallback(response) {
+    //          FlashMessage.create({ text: 'Ocurrió un error inesperado, por favor intente de nuevo', type: 'alert' });
+    //      }
+    //   ).finally(function(){ vm.ui.disableSubmit = false });
   }
 
   vm.resetForm();
