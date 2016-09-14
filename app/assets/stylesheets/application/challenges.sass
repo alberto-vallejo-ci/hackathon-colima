@@ -16,7 +16,9 @@
       li
         margin: 0 0.5em
         width: 4em
-        &.active
+        a
+          display: block
+        &.active, &:hover
           svg #MainObject
             &, *
               fill: map-get($colors, green)
