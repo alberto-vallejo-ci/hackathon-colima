@@ -18,7 +18,7 @@ section#challenges
             ul
               - @home.categories.each do |category|
                 li
-                  a(href='javascript:void(0)' data-value=category.icon data-toggle="tooltip" title=category.name)
+                  a(href='javascript:void(0)' data-value=category.icon data-toggle="tooltip" title=category.name data-trigger='hover')
                     = image_tag("iconos/#{category.icon}.svg", title: category.name.capitalize, svg: true)
               end
             end
