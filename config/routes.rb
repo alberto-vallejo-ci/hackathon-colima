@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resource :registration, only: :show, controller: :registration
 
   namespace :admin, module: :administrator do
-    root to: 'home#show'
+    root to: 'challenges#index'
+
+    resources :challenges
   end
 end

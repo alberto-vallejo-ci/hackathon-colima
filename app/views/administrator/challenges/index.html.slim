@@ -1,0 +1,6 @@
+#admin-challenges
+  h4= 'Lista de Retos'
+
+  #challenges-list.col-sm-6
+    ul
+      = render partial: 'challenge', collection: challenges, as: :challenge

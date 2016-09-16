@@ -4,6 +4,7 @@ ruby "2.3.0"
 gem "rails", "4.2.7"
 
 gem "coffee-rails"
+gem "decent_exposure"
 gem "font-awesome-rails"
 gem "jquery-rails"
 gem "pg"
