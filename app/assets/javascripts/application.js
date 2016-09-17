@@ -15,7 +15,6 @@
 //= require tether/dist/js/tether
 //= require bootstrap/dist/js/bootstrap
 //= require angular/angular
-//= require ng-simple-parallax/js/ngParallax
 //= require jquery-sticky/jquery.sticky
 //= require angular-rails-templates
 //= require_tree ./application
