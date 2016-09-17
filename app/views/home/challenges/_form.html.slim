@@ -1,33 +1,4 @@
 div(ng-controller='ChallengeFormController')
-  .modal.fade#confirmation
-    .modal-dialog.modal-lg
-      .modal-content
-        .modal-header
-          button(type="button" class="close" data-dismiss="modal" aria-label="Close")
-            span(aria-hidden="true") &times;
-          h2 Confirma la información de tu idea o proyecto
-        .modal-body
-          h2(ng-bind='challenge.title')
-          h5 Lo que se quiere resolver
-          p(ng-bind='challenge.description')
-          h5 Como lo piensa solucionar
-          p(ng-bind='challenge.description_how')
-          div(ng-show='ui.knowsLocation == "true"')
-            h5 Donde se piensa implementar
-            p(ng-bind='challenge.location')
-          div(ng-show='challenge.is_looking_for_team == "true"')
-            h5 Este equipo esta buscando un equipo con las siguientes características
-            .requirements
-              span.tag.tag-success(ng-repeat='requirement in challenge.profile_requirements.split(",")' ng-bind='requirement')
-          h5 Información del líder de equipo
-          p
-            | {{ challenge.owner_name }}
-            br
-            | {{ challenge.owner_email }}
-            br
-            | {{ challenge.owner_phone }}
-
-
   .modal.fade#nuevoreto
     .modal-dialog.modal-lg
       .modal-content
