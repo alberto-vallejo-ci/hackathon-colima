@@ -24,29 +24,26 @@
               fill: map-get($colors, green)
 
   .list
-    .challenge.hidden
-      display: none
     article
       margin-bottom: 1.5em
       display: flex
       flex-flow: column
       header
         display: flex
+        align-items: center
         margin-bottom: 1em
         .icon
           margin: auto 0
           width: 4em
-        .title
+          a
+            &:hover
+              svg #MainObject
+                &, *
+                  fill: map-get($colors, green)
+        h3
+          flex: 1
           margin-left: 0.4em
-          p
-            text-overflow: ellipsis
-            overflow: hidden
-
-            margin: 0
-          .name
-            font-size: 1.25em
-          .category
-            font-size: 1em
+          font-size: 1.25em
       p
         color: map-get($colors, gray)
         line-height: 1.2em
