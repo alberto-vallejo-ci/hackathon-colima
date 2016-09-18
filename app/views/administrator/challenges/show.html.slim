@@ -1,0 +1,48 @@
+p#notice = notice
+
+p
+  strong Título:
+  br
+  = challenge.title
+p
+  strong Categoría:
+  br
+  = challenge.category_name
+p
+  strong Nombre del Autor:
+  br
+  = challenge.owner_name
+p
+  strong Correo del Autor:
+  br
+  = challenge.owner_email
+p
+  strong Teléfono del Autor:
+  br
+  = challenge.owner_phone
+p
+  strong ¿Cuál es el problema a resolver?:
+  br
+  = challenge.description
+p
+  strong ¿Cómo lo piensa solucionar?:
+  br
+  = challenge.description_how
+p
+  strong Perfiles que necesita para el equipo: (#{ challenge.is_looking_for_team? ? 'Sí' : 'No' } Busca Equipo)
+  br
+  = challenge.profile_requirements
+p
+  strong ¿Dónde lo va a implementar?
+  br
+  = challenge.location
+p
+  strong Otros requerimientos:
+  br
+  = challenge.assets
+
+= link_to 'Editar', edit_admin_challenge_path(challenge)
+'|
+= link_to 'Registrar Reto', new_admin_challenge_path
+'|
+= link_to 'Listado de Retos', admin_challenges_path

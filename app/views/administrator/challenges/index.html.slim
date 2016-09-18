@@ -1,6 +1,29 @@
-#admin-challenges
-  h4= 'Lista de Retos'
+h1 Listado de Retos
 
-  #challenges-list.col-sm-6
-    ul
-      = render partial: 'challenge', collection: challenges, as: :challenge
+table.table
+  thead
+    tr
+      th Título
+      th Categoría
+      th Autor
+      th Email
+      th Descripción
+      th
+      th
+      th
+
+  tbody
+    - challenges.each do |challenge|
+      tr
+        td = challenge.title
+        td = challenge.category_name
+        td = challenge.owner_name
+        td = challenge.owner_email
+        td = challenge.description
+        td = link_to 'Mostrar', [:admin, challenge]
+        td = link_to 'Editar', edit_admin_challenge_path(challenge)
+        td = link_to 'Eliminar', [:admin, challenge], data: { confirm: 'Estás seguro?' }, method: :delete
+
+br
+
+= link_to 'Registrar Reto', new_admin_challenge_path

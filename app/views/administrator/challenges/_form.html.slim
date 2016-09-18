@@ -1,0 +1,42 @@
+= form_for [:admin, challenge] do |f|
+  - if challenge.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(challenge.errors.count, "error")} prohibited this mentor from being saved:"
+      ul
+        - challenge.errors.full_messages.each do |message|
+          li = message
+  .form-group
+    = f.label :title, 'Título'
+    = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label :category_id, 'Categoría'
+    = f.select :category_id, Category.all.map{|category| [category.name, category.id] }, class: 'form-control'
+  .form-group
+    = f.label :owner_name, 'Nombre del Autor'
+    = f.text_field :owner_name, class: 'form-control'
+  .form-group
+    = f.label :owner_email, 'Correo del Autor'
+    = f.text_field :owner_email, class: 'form-control'
+  .form-group
+    = f.label :owner_phone, 'Teléfono del Autor'
+    = f.text_field :owner_phone, class: 'form-control'
+  .form-group
+    = f.label :description, '¿Cuál es el problema a resolver?'
+    = f.text_area :description, class: 'form-control'
+  .form-group
+    = f.label :description_how, '¿Cómo lo piensa solucionar?'
+    = f.text_area :description_how, class: 'form-control'
+  .form-group
+    = f.label :is_looking_for_team, '¿Está buscando equipo?'
+    = f.check_box :is_looking_for_team, class: 'form-control'
+  .form-group
+    = f.label :profile_requirements, 'Perfiles que necesita para el equipo:'
+    = f.text_field :profile_requirements, class: 'form-control'
+  .form-group
+    = f.label :location, '¿Dónde lo va a implementar'
+    = f.text_field :location, class: 'form-control'
+  .form-group
+    = f.label :assets, 'Otros requerimientos'
+    = f.text_field :assets, class: 'form-control'
+
+  .actions = f.submit
