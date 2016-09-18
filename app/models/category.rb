@@ -1,6 +1,4 @@
 class Category < ActiveRecord::Base
-  #-------------------
-  # ASSOCIATIONS
-  #-------------------
   has_many :challenges
+  has_many :mentors
 end

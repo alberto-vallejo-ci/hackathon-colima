@@ -10,7 +10,7 @@ section#challenges
           p
             |Puedes registrar tu reto enviando un mensaje al <strong>312 102 2777</strong> o un correo a <strong>contacto@hackcolima.com</strong>.
             br
-            |Tu reto puede entrar en una de las siguientes categorías.
+            |Tu reto puede entrar en una o varias de las siguientes categorías.
             br
             br
       .row.list
@@ -23,7 +23,8 @@ section#challenges
                     = image_tag("iconos/#{category.icon}.svg", svg: true)
                 h3
                   = category.name
-              p Las energías renovables consisten en un conjunto de...
-              h6 Mentores
-              ul.dotted
-                li Ing. Daniel Gaytán
+              - if category.mentors.any?
+                h6 Mentores
+                ul
+                  - category.mentors.each do |mentor|
+                    li() #{mentor.title} #{mentor.first_name} #{mentor.last_name}
