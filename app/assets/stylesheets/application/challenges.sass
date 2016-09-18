@@ -1,27 +1,6 @@
 #challenges
   .header
     margin-bottom: 1em
-  .categories
-    display: flex
-    flex-flow: row wrap
-    align-items: center
-    margin-bottom: 1.5em
-    span
-      font-size: 1.3em
-    ul
-      display: flex
-      flex-flow: row wrap
-      flex-basis: 90%
-      margin: 0
-      li
-        margin: 0 0.5em
-        width: 4em
-        a
-          display: block
-        &.active, &:hover
-          svg #MainObject
-            &, *
-              fill: map-get($colors, green)
 
   .list
     article
@@ -48,37 +27,15 @@
         color: map-get($colors, gray)
         line-height: 1.2em
         word-wrap: break-word
-      .requirements
-        margin: 1em
-        .tag
-          margin-right: 0.5em
-          padding: 1em
-          font-weight: normal
-      .actions
-        a
-          box-shadow: map-get($colors, gray) 1px 1px 1px 1px
-          padding: 5px 20px
-
-    .new-challenge
-      align-items: center
-      background-color: map-get($colors, white-dark)
-      display: flex
-      font-size: 2em
-      justify-content: center
-      margin: 1em
-      padding: 0
-      a
-        padding: 2em 2.5em
-      i
-        color: map-get($colors, green)
 
 #confirmation
-  .requirements
+  .tags
     margin: 1em
     .tag
       margin-right: 0.5em
       padding: 1em
       font-weight: normal
+
 #nuevoreto
   form
     .cancel
