@@ -41,6 +41,9 @@ GEM
       railties (>= 4.2, < 6)
       sprockets (>= 3.0, < 5)
       tilt
+    annotate (2.7.1)
+      activerecord (>= 3.2, < 6.0)
+      rake (>= 10.4, < 12.0)
     arel (6.0.3)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -195,6 +198,7 @@ PLATFORMS
 
 DEPENDENCIES
   angular-rails-templates (= 1.0.2)
+  annotate
   coffee-rails
   decent_exposure
   devise
