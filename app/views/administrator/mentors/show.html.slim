@@ -1,0 +1,26 @@
+p#notice = notice
+
+p
+  strong First name:
+  = @mentor.first_name
+p
+  strong Last name:
+  = @mentor.last_name
+p
+  strong Email:
+  = @mentor.email
+p
+  strong Title:
+  = @mentor.title
+p
+  strong Experience:
+  = @mentor.experience
+p
+  strong Category:
+  = @mentor.category.name
+
+= link_to 'Edit', edit_admin_mentor_path(@mentor)
+'|
+= link_to 'New', new_admin_mentor_path
+'|
+= link_to 'Back', admin_mentors_path

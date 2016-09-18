@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   namespace :admin, module: :administrator do
     root to: 'home#show'
+    resources :mentors
   end
 end
