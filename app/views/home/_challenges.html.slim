@@ -8,21 +8,23 @@ section#challenges
       .row
         .col-md-12
           p
-            |Para poder buscar entre los retos, utiliza el filtro por categoría. Da click en una o en varias de ellas para poder ver los retos que corresponden a esas características.
+            |Puedes registrar tu reto enviando un mensaje al <strong>312 102 2777</strong> o un correo a <strong>contacto@hackcolima.com</strong>.
             br
-            |Dar click en <strong>+</strong> te llevará a la sección donde puedes registrar un nuevo reto.
-      .row
-        .col-md-12
-          .categories
-            span Categorías
-            ul
-              - @home.categories.each do |category|
-                li
-                  a(href='javascript:void(0)' data-value=category.icon data-toggle="tooltip" title=category.name data-trigger='hover')
-                    = image_tag("iconos/#{category.icon}.svg", title: category.name.capitalize, svg: true)
-              end
-            end
-
+            |Tu reto puede entrar en una o varias de las siguientes categorías.
+            br
+            br
       .row.list
-        = render partial: 'home/challenges/challenge', collection: @home.challenges, as: :challenge
-        = render 'home/challenges/new'
+        - @home.categories.each do |category|
+          .col-sm-6.col-md-3
+            article
+              header
+                .icon
+                  a(href='javascript:void(0)')
+                    = image_tag("iconos/#{category.icon}.svg", svg: true)
+                h3
+                  = category.name
+              - if category.mentors.any?
+                h6 Mentores
+                ul
+                  - category.mentors.each do |mentor|
+                    li() #{mentor.title} #{mentor.first_name} #{mentor.last_name}

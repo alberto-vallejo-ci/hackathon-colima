@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   namespace :admin, module: :administrator do
     root to: 'challenges#index'
-
     resources :challenges
+    resources :mentors
   end
 end

@@ -1,77 +1,83 @@
-.modal.fade#nuevoreto
-  .modal-dialog.modal-lg
-    .modal-content
-      .modal-header
-        button(type="button" class="close" data-dismiss="modal" aria-label="Close")
-          span(aria-hidden="true") &times;
-        h2 Registra un Reto
-      .modal-body(ng-controller='ChallengeFormController')
-        form(novalidate name='form' ng-submit='onSubmit()')
-          .form-group
-            input.form-control(type='text' name='title' ng-model='challenge.title' required minlength='4' maxlength='60' placeholder='Título del reto')
-            .text-danger(ng-messages="form.title.$error" role="alert" ng-if='form.title.$dirty && form.title.$invalid' ng-cloak)
-              div(ng-message='required, minlength') El título debe tener al menos 4 caracteres
-              div(ng-message='maxlength') El título debe tener al máximo 60 caracteres
+div(ng-controller='ChallengeFormController')
+  .modal.fade#nuevoreto
+    .modal-dialog.modal-lg
+      .modal-content
+        .modal-header
+          button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+            span(aria-hidden="true") &times;
+          h2 Registra un Reto
+        .modal-body
+          form(novalidate name='form' ng-submit='onSubmit()')
+            p
+              | Todos los datos que pongas en esta forma se enviará a los mentores para su revisión al correo <strong>contacto@hackcolima.com</strong>.
+              br
+              br
+              | <strong>Sólo será expuesta la información que el líder de equipo considere</strong> durante la presentación de propuestas el viernes 30 de Septiembre de 2016.
+            .form-group
+              input.form-control(type='text' name='title' ng-model='challenge.title' required minlength='4' maxlength='60' placeholder='Título del reto')
+              .text-danger(ng-messages="form.title.$error" role="alert" ng-if='form.title.$dirty && form.title.$invalid' ng-cloak)
+                div(ng-message='required, minlength') El título debe tener al menos 4 caracteres
+                div(ng-message='maxlength') El título debe tener al máximo 60 caracteres
 
-          fieldset
-            legend Datos de quien registra
-            .form-group
-              input.form-control(type='text' name='ownerName' ng-model='challenge.owner_name' required placeholder='Nombre de quien propone')
-              .text-danger(ng-messages="form.ownerName.$error" role="alert" ng-if='form.ownerName.$dirty && form.ownerName.$invalid' ng-cloak)
-                div(ng-message='required') Proporciona un nombre de contacto
-            .form-group
-              input.form-control(type='email' name='ownerEmail' ng-model='challenge.owner_email' placeholder='Correo de contacto')
-              .text-danger(ng-messages="form.ownerEmail.$error" role="alert" ng-if='form.ownerEmail.$dirty && form.ownerEmail.$invalid' ng-cloak)
-                div(ng-message='email') Proporciona un correo de contacto válido
-            .form-group
-              input.form-control(type='number' minlength='10' maxlength='10' name='ownerPhone' ng-model='challenge.owner_phone' placeholder='Teléfono de contacto')
-              .text-danger(ng-messages="form.ownerPhone.$error" role="alert" ng-if='form.ownerPhone.$dirty && form.ownerPhone.$invalid' ng-cloak)
-                div(ng-message='minlength, maxlength, number') Proporciona los 10 dígitos de tu número telefónico para poder ponernos en contacto contigo
-          fieldset
-            legend Datos del reto
-            .form-group
-              textarea.form-control(placeholder='¿Qué quieres lograr? (problemática)' name='description' ng-model='challenge.description' minlength='40' required)
-              .text-danger(ng-messages="form.description.$error" role="alert" ng-if='form.description.$dirty && form.description.$invalid' ng-cloak)
-                div(ng-message='minlength, required') Describe la problemática a resolver en al menos 40 caracteres
-            .form-group
-              textarea.form-control(placeholder='¿Cómo lo piensas lograr? (algo tangible que piensen desarrollar)' name='descriptionHow' ng-model='challenge.description_how' minlength='40' required)
-              .text-danger(ng-messages="form.descriptionHow.$error" role="alert" ng-if='form.descriptionHow.$dirty && form.descriptionHow.$invalid' ng-cloak)
-                div(ng-message='minlength, required') Describe la solución a implementar en al menos 40 caracteres
-            .form-group
-              = select_tag('category', options_from_collection_for_select(categories, 'id', 'name'), class: 'form-control', include_blank: 'Selecciona una categoría', 'ng-model' => 'challenge.category_id', 'required' => true)
-              .text-danger(ng-messages="form.category.$error" role="alert" ng-if='form.category.$dirty && form.category.$invalid' ng-cloak)
-                div(ng-message='required') Selecciona la categoría que creas que puede corresponder a tu reto
-            .form-group
-              textarea.form-control(placeholder='Opcional: ¿Necesitas algo más? (datos, sensores, documentos, etc.)' name='assets' ng-model='challenge.assets')
-            fieldset.form-group
-              legend ¿Estás buscando personas para tu equipo?
-              .radio
-                label.form-check-inline
-                  input.form-check-input(type='radio' ng-model='challenge.is_looking_for_team' name='isLookingForTeam' value='true' required)
-                  |  Sí
-                label.form-check-inline
-                  input.form-check-input(type='radio' ng-model='challenge.is_looking_for_team' name='isLookingForTeam' value='false' required)
-                  |  No
-              .text-danger(ng-messages="form.isLookingForTeam.$error" role="alert" ng-if='form.isLookingForTeam.$dirty && form.isLookingForTeam.$invalid' ng-cloak)
-                div(ng-message='required') Selecciona una opción por favor
-            .form-group(ng-cloak='true' ng-if='challenge.is_looking_for_team == "true"')
-              textarea.form-control(placeholder='¿Qué perfiles crees que necesitas para tu equipo? (programador, diseñador, ...)' name='profileRequirements' ng-model='challenge.profile_requirements' ng-required='challenge.is_looking_for_team == "true"')
-              .text-danger(ng-messages="form.profileRequirements.$error" role="alert" ng-if='form.profileRequirements.$dirty && form.profileRequirements.$invalid' ng-cloak)
-                div(ng-message='required') Escribe brevemente qué perfil de personas buscas para tu equipo
-            fieldset.form-group
-              legend ¿Sabes dónde lo vas a implementar?
-              .radio
-                label.form-check-inline
-                  input.form-check-input(type='radio' ng-model='ui.knowsLocation' name='knowsLocation' value='true' required)
-                  |  Sí
-                label.form-check-inline
-                  input.form-check-input(type='radio' ng-model='ui.knowsLocation' name='knowsLocation' value='false' required)
-                  |  No
-            .form-group(ng-cloak='true' ng-if='ui.knowsLocation == "true"')
-              input.form-control(type='text' placeholder='Estado, Municipio, Localidad' name='location' ng-model='challenge.location' ng-required='ui.knowsLocation == "true"')
-              .text-danger(ng-messages="form.location.$error" role="alert" ng-if='form.location.$dirty && form.location.$invalid' ng-cloak)
-                div(ng-message='required') Proporciona el lugar donde implementarás tu solución
+            fieldset
+              legend Datos de quien registra
+              .form-group
+                input.form-control(type='text' name='ownerName' ng-model='challenge.owner_name' required placeholder='Nombre de quien propone')
+                .text-danger(ng-messages="form.ownerName.$error" role="alert" ng-if='form.ownerName.$dirty && form.ownerName.$invalid' ng-cloak)
+                  div(ng-message='required') Proporciona un nombre de contacto
+              .form-group
+                input.form-control(type='email' name='ownerEmail' ng-model='challenge.owner_email' placeholder='Correo de contacto')
+                .text-danger(ng-messages="form.ownerEmail.$error" role="alert" ng-if='form.ownerEmail.$dirty && form.ownerEmail.$invalid' ng-cloak)
+                  div(ng-message='email') Proporciona un correo de contacto válido
+              .form-group
+                input.form-control(type='number' minlength='10' maxlength='10' name='ownerPhone' ng-model='challenge.owner_phone' placeholder='Teléfono de contacto')
+                .text-danger(ng-messages="form.ownerPhone.$error" role="alert" ng-if='form.ownerPhone.$dirty && form.ownerPhone.$invalid' ng-cloak)
+                  div(ng-message='minlength, maxlength, number') Proporciona los 10 dígitos de tu número telefónico para poder ponernos en contacto contigo
+            fieldset
+              legend Datos del reto
+              .form-group
+                textarea.form-control(placeholder='¿Qué quieres lograr? (problemática)' name='description' ng-model='challenge.description' minlength='40' required)
+                .text-danger(ng-messages="form.description.$error" role="alert" ng-if='form.description.$dirty && form.description.$invalid' ng-cloak)
+                  div(ng-message='minlength, required') Describe la problemática a resolver en al menos 40 caracteres
+              .form-group
+                textarea.form-control(placeholder='¿Cómo lo piensas lograr? (algo tangible que piensen desarrollar)' name='descriptionHow' ng-model='challenge.description_how' minlength='40' required)
+                .text-danger(ng-messages="form.descriptionHow.$error" role="alert" ng-if='form.descriptionHow.$dirty && form.descriptionHow.$invalid' ng-cloak)
+                  div(ng-message='minlength, required') Describe la solución a implementar en al menos 40 caracteres
+              .form-group
+                = select_tag('category', options_from_collection_for_select(categories, 'id', 'name'), class: 'form-control', include_blank: 'Selecciona una categoría', 'ng-model' => 'challenge.category_id', 'required' => true)
+                .text-danger(ng-messages="form.category.$error" role="alert" ng-if='form.category.$dirty && form.category.$invalid' ng-cloak)
+                  div(ng-message='required') Selecciona la categoría que creas que puede corresponder a tu reto
+              .form-group
+                textarea.form-control(placeholder='Opcional: ¿Necesitas algo más? (datos, sensores, documentos, etc.)' name='assets' ng-model='challenge.assets')
+              fieldset.form-group
+                legend ¿Estás buscando personas para tu equipo?
+                .radio
+                  label.form-check-inline
+                    input.form-check-input(type='radio' ng-model='challenge.is_looking_for_team' name='isLookingForTeam' value='true' required)
+                    |  Sí
+                  label.form-check-inline
+                    input.form-check-input(type='radio' ng-model='challenge.is_looking_for_team' name='isLookingForTeam' value='false' required)
+                    |  No
+                .text-danger(ng-messages="form.isLookingForTeam.$error" role="alert" ng-if='form.isLookingForTeam.$dirty && form.isLookingForTeam.$invalid' ng-cloak)
+                  div(ng-message='required') Selecciona una opción por favor
+              .form-group(ng-cloak='true' ng-if='challenge.is_looking_for_team == "true"')
+                textarea.form-control(placeholder='¿Qué perfiles crees que necesitas para tu equipo? (programador, diseñador, ...)' name='profileRequirements' ng-model='challenge.profile_requirements' ng-required='challenge.is_looking_for_team == "true"')
+                .text-danger(ng-messages="form.profileRequirements.$error" role="alert" ng-if='form.profileRequirements.$dirty && form.profileRequirements.$invalid' ng-cloak)
+                  div(ng-message='required') Escribe brevemente qué perfil de personas buscas para tu equipo
+              fieldset.form-group
+                legend ¿Sabes dónde lo vas a implementar?
+                .radio
+                  label.form-check-inline
+                    input.form-check-input(type='radio' ng-model='ui.knowsLocation' name='knowsLocation' value='true' required)
+                    |  Sí
+                  label.form-check-inline
+                    input.form-check-input(type='radio' ng-model='ui.knowsLocation' name='knowsLocation' value='false' required)
+                    |  No
+              .form-group(ng-cloak='true' ng-if='ui.knowsLocation == "true"')
+                input.form-control(type='text' placeholder='Estado, Municipio, Localidad' name='location' ng-model='challenge.location' ng-required='ui.knowsLocation == "true"')
+                .text-danger(ng-messages="form.location.$error" role="alert" ng-if='form.location.$dirty && form.location.$invalid' ng-cloak)
+                  div(ng-message='required') Proporciona el lugar donde implementarás tu solución
 
-          .form-group.text-xs-right
-            a.cancel(href='javascript:void(0)' ng-click='cancel()') Cancelar
-            input.btn.btn-primary(type='submit' ng-disabled='ui.disableSubmit || form.$invalid' value='Registrar Reto')
+            .form-group.text-xs-right
+              a.cancel(href='javascript:void(0)' ng-click='cancel()') Cancelar
+              input.btn.btn-primary(type='submit' ng-disabled='ui.disableSubmit || form.$invalid' value='Registrar Reto')
