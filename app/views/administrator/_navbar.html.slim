@@ -1,6 +1,6 @@
-nav.main-navigator
-  = link_to 'Retos', admin_challenges_path
-  |  |  
-  = link_to 'Mentores', admin_mentors_path
-  |  |  
-  = link_to 'Salir', destroy_admin_session_path, method: :delete
+nav.navbar.navbar-fixed-top.navbar-light.bg-faded
+  a.navbar-brand(href="javascript:void(0)") HackColima 2016
+  .nav.navbar-nav.pull-xs-right
+    a.nav-item.nav-link(href="#{admin_challenges_path}" class="#{ current_page?(admin_challenges_path) ? 'active' : ''}") Retos
+    a.nav-item.nav-link(href="#{admin_mentors_path}" class="#{ current_page?(admin_mentors_path) ? 'active' : ''}") Mentores
+    a.nav-item.nav-link(href="#{destroy_admin_session_path}" rel="nofollow" data-method="delete") Salir
