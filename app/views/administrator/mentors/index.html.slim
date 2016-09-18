@@ -1,14 +1,14 @@
-h1 Listing Mentors
+h1 Listado de Mentores
 
 table.table
   thead
     tr
-      th First name
-      th Last name
+      th Nombres
+      th Apellidos
       th Email
-      th Title
-      th Experience
-      th Category
+      th Título
+      th Experiencia
+      th Categoría
       th
       th
       th
@@ -22,10 +22,10 @@ table.table
         td = mentor.title
         td = mentor.experience
         td = mentor.category.name
-        td = link_to 'Show', [:admin, mentor]
-        td = link_to 'Edit', edit_admin_mentor_path(mentor)
-        td = link_to 'Destroy', [:admin, mentor], data: { confirm: 'Are you sure?' }, method: :delete
+        td = link_to 'Mostrar', [:admin, mentor]
+        td = link_to 'Editar', edit_admin_mentor_path(mentor)
+        td = link_to 'Eliminar', [:admin, mentor], data: { confirm: 'Estás seguro?' }, method: :delete
 
 br
 
-= link_to 'New Mentor', new_admin_mentor_path
+= link_to 'Crear Mentor', new_admin_mentor_path
