@@ -6,22 +6,23 @@
         - @mentor.errors.full_messages.each do |message|
           li = message
 
-  .field
+  .form-group
     = f.label :title, 'Título'
-    = f.text_field :title, autofocus: true
-  .field
+    = f.text_field :title, autofocus: true, class: 'form-control'
+  .form-group
     = f.label :first_name, 'Nombres'
-    = f.text_field :first_name
-  .field
+    = f.text_field :first_name, class: 'form-control'
+  .form-group
     = f.label :last_name, 'Apellidos'
-    = f.text_field :last_name
-  .field
+    = f.text_field :last_name, class: 'form-control'
+  .form-group
     = f.label :email
-    = f.text_field :email
-  .field
+    = f.text_field :email, class: 'form-control'
+  .form-group
     = f.label :experience, 'Experiencia'
-    = f.text_area :experience
-  .field
+    = f.text_area :experience, class: 'form-control'
+  .form-group
     = f.label :category_id, 'Categoría'
-    = f.select :category_id, Category.all.map{|category| [category.name, category.id] }
-  .actions = f.submit
+    = f.select :category_id, Category.all.map{|category| [category.name, category.id] }, class: 'form-control'
+  .form-group
+    = f.submit "#{@mentor.new_record? ? 'Crear' : 'Actualizar'} Mentor", class: 'btn btn-primary'

@@ -2,21 +2,27 @@ p#notice = notice
 
 p
   strong Nombres:
+  br
   = @mentor.first_name
 p
   strong Apellidos:
+  br
   = @mentor.last_name
 p
   strong Email:
+  br
   = @mentor.email
 p
   strong Título:
+  br
   = @mentor.title
 p
   strong Experiencia:
+  br
   = @mentor.experience
 p
   strong Categoría:
+  br
   = @mentor.category.name
 
 = link_to 'Editar', edit_admin_mentor_path(@mentor)

@@ -39,4 +39,5 @@
     = f.label :assets, 'Otros requerimientos'
     = f.text_field :assets, class: 'form-control'
 
-  .actions = f.submit
+  .form-group
+    = f.submit "#{challenge.new_record? ? 'Crear' : 'Actualizar'} Reto", class: 'btn btn-primary'

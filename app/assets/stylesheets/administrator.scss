@@ -1,0 +1,14 @@
+$enable-flex: true;
+
+@import 'variables';
+@import 'bootstrap/scss/bootstrap';
+@import 'font-awesome';
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  padding-bottom: 3rem;
+};
+
+.container{
+  padding-top: 2rem;
+}
