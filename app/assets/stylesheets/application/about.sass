@@ -6,11 +6,15 @@
     margin-bottom: 1em
   .content
     text-align: justify
-  hr
-    width: 100%
   article
     padding: 2em 0
-  article:nth-child(odd)
-    flex-wrap: wrap-reverse
-  article:nth-child(3)
-    flex-wrap: wrap
+    display: flex
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+    border-style: dotted
+    border-top: none
+    border-left: none
+    border-right: none
+    &:last-child
+      border: none
+    &:nth-child(odd)
+      flex-flow: row-reverse wrap
