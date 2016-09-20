@@ -22,8 +22,7 @@ section#challenges
             article
               header
                 .icon
-                  a(href='javascript:void(0)')
-                    = image_tag("iconos/#{category.icon}.svg", svg: true)
+                  = image_tag("iconos/#{category.icon}.svg", svg: true)
                 h3
                   = category.name
               - if category.mentors.any?
