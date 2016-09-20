@@ -27,7 +27,7 @@ section#challenges
                 h3
                   = category.name
               - if category.mentors.any?
-                h6 Mentores
+                h5 Mentores
                 ul
                   - category.mentors.each do |mentor|
                     li() #{mentor.title} #{mentor.first_name} #{mentor.last_name}
