@@ -1,8 +1,20 @@
-application.directive('stickyJs', function(){
+application.directive('scrollViewAfter', ["$window", function ($window) {
     return {
         restrict: 'A',
-        link: function($scope, $element){
-            $($element).sticky();
+        link: function($scope, $element, $attrs) {
+            let onScroll = function(){
+                if ($window.pageYOffset >= $($attrs.scrollViewAfter).height()){
+                    $element.removeClass('out');
+                    $element.addClass('enter');
+                } else {
+                    $element.removeClass('enter');
+                    $element.addClass('out');
+                };
+            }
+            onScroll();
+            angular.element($window).bind("scroll", function() {
+                $scope.$apply(onScroll);
+            });
         }
-    }
-})
+    };
+}])
