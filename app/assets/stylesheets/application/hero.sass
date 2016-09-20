@@ -66,16 +66,17 @@
     text-transform: none
     i
       padding: 1em .8em !important
-nav
+nav#main-nav
   display: flex
+  flex-flow: row wrap
   align-items: center
   position: fixed !important
   width: 100%
   top: 0
   background: rgba(0, 0, 0, 0.6)
-  padding: 1em
   z-index: 9998
   transform: translateY(-100%)
+  padding: 0.5em
   &.enter
     animation: slide-in 1s forwards
   &.out
@@ -83,23 +84,49 @@ nav
   .title
     color: map-get($colors, white)
     display: flex
+    align-items: center
     flex-flow: column
+    text-align: center
+    margin-bottom: 0.5em
+    @include media-breakpoint-up(md)
+      align-items: flex-start
+      text-align: left
+      margin-bottom: 0
     strong
       color: map-get($colors, white)
     i
       color: map-get($colors, green-light)
       margin-right: 0.4em
-  ul
+  .links
     display: flex
-    margin-bottom: 0
-    justify-content: flex-end
+    flex-flow: column
     align-items: center
-    li
-      margin: 0 1em
-      a
-        color: map-get($colors, white)
-        &:hover
-          color: map-get($colors, green-light)
+    margin-top: 0.5em
+    @include media-breakpoint-up(md)
+      flex-flow: row
+      justify-content: flex-end
+      margin-top: 0
+      .nvite-btn
+        margin-right: 1rem
+    ul.social
+      display: flex
+      flex-flow: row
+      font-size: 2em
+      margin: 0
+      li
+        margin: 0 1rem
+        a
+          color: map-get($colors, white)
+          &:hover
+            color: map-get($colors, green-light)
+    .nvite-btn
+      &.nvite-rsvp-widget-container.nvite-btn-down > .nvite-rsvp-widget-options
+        top: 80%
+        padding-top: 0
+
+      &.nvite-rsvp-widget-container.nvite-btn-down:hover > .nvite-rsvp-widget-options
+        top: 100%
+        padding-top: 7px
 
 @keyframes slide-in
   100%

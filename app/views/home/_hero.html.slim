@@ -8,20 +8,20 @@ section#hero
       .actions
         script(async src="//widgets.nvite.com/1.5/button.js" data-resource="ae74" data-class='nvite-btn' ng-attr-data-resource="ae74" data-button-text="Registro")
       = render 'slogan', words: ['Innovación', 'Planeta']
-nav(scroll-view-after='#hero')
-  .title.col-xs-6
+nav#main-nav(scroll-view-after='#hero')
+  .title.col-md-6.col-xs-12
     .h5
       = fa_icon 'map-marker'
-      |Instituto Tecnológico de Colima
+      |ITC
     span
       = fa_icon 'calendar'
-      |30 de Septiembre, 1 y 2 de Octubre
-  ul.links.col-xs-6
-    li
-      script(async src="//widgets.nvite.com/1.5/button.js" data-resource="ae74" data-class='nvite-btn' ng-attr-data-resource="ae74" data-button-text="Registro")
-    li.facebook
-      a(href='//facebook.com/HackColima' target='_blank')
-        = fa_icon "facebook-official"
-    li.twitter
-      a(href='//twitter.com/HackColima' target='_blank')
-        = fa_icon "twitter"
+      |30 Sep, 6:30pm, Sala Audiovisual
+  .links.col-md-6.col-xs-12
+    script(async src="//widgets.nvite.com/1.5/button.js" data-resource="ae74" data-class='nvite-btn nvite-btn-down' ng-attr-data-resource="ae74" data-button-text="Registro")
+    ul.social
+      li.facebook
+        a(href='//facebook.com/HackColima' target='_blank')
+          = fa_icon "facebook-official"
+      li.twitter
+        a(href='//twitter.com/HackColima' target='_blank')
+          = fa_icon "twitter"

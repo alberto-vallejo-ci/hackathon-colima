@@ -7,8 +7,10 @@ application.directive('scrollViewAfter', ["$window", function ($window) {
                     $element.removeClass('out');
                     $element.addClass('enter');
                 } else {
-                    $element.removeClass('enter');
-                    $element.addClass('out');
+                    if($element.hasClass('enter')){
+                        $element.removeClass('enter');
+                        $element.addClass('out');
+                    }
                 };
             }
             onScroll();

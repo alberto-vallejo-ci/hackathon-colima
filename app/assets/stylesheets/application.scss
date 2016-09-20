@@ -4,14 +4,6 @@ $enable-flex: true;
 @import 'bootstrap/scss/bootstrap';
 @import 'font-awesome';
 
-@include media-breakpoint-down(sm) {
-  html{ font-size: 10px };
-};
-
-html, body {
-  height: 100%;
-};
-
 body {
   font-family: 'Open Sans', sans-serif
 };
@@ -21,6 +13,7 @@ ul {
   padding: 0;
   &.dotted {
     list-style: circle;
+    margin-left: 1em;
   }
 };
 
@@ -35,6 +28,7 @@ strong {
 .slogan {
   display: flex;
   align-items: center;
+  line-height: 1em;
   i {
     font-size: 0.6em;
     margin: 0 0.3em;
