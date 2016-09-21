@@ -17,7 +17,10 @@ nav#main-nav(scroll-view-after='#hero')
       = fa_icon 'calendar'
       |30 Sep, 6:30pm, Sala Audiovisual
   .links.col-md-6.col-xs-12
-    button.btn.btn-primary.nvite-button-custom Registro
+    .nvite-btn
+      button(class="nvite-rsvp-widget-button nvite-button-custom")
+        |Registro
+        i(class="fa fa-plus-circle")
     ul.social
       li.facebook
         a(href='//facebook.com/HackColima' target='_blank')
