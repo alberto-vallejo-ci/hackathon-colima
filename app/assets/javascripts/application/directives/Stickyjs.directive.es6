@@ -20,3 +20,10 @@ application.directive('scrollViewAfter', ["$window", function ($window) {
         }
     };
 }])
+
+$(function(){
+    $('body').on('click', '.nvite-button-custom', function(){
+        console.log('clicked');
+        $('.nvite-rsvp-widget-options-button.nvite-rsvp-widget-button-email').first().click();
+    });
+});
