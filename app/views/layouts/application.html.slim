@@ -17,6 +17,8 @@ html
     meta(property="og:description" content="Regístrate al mejor evento de innovación de Colima #HackColima2016")
     meta(property="og:image" content="#{image_url('social-facebook.png')}")
 
+    = favicon_link_tag
+
     script src="//maps.googleapis.com/maps/api/js?v=3.exp&key=#{GOOGLE_MAP_API_KEY}&libraries=places"
     link href='//fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,800' media='screen' rel='stylesheet'
     = stylesheet_link_tag 'application', media: 'all'
