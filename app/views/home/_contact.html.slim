@@ -12,20 +12,25 @@ section#contact
           p
             |La información que nos proporciones, será enviada a 
             a(href='mailto:contacto@hackcolima.com') contacto@hackcolima.com
-          form(novalidate name='form')
+          form(novalidate name='form' ng-submit='onSubmit()')
             .form-group
               input.form-control(ng-model='contact.name' name='name' type='text' placeholder='Nombre' required minlength="2")
-              .text-danger(ng-messages="form.name.$error" role="alert" ng-if='form.name.$dirty && form.name.$invalid' ng-cloak)
+              .text-danger(ng-messages="form.name.$error" role="alert" ng-show='(form.$submitted && !!form.name.$pristine) || (form.name.$dirty && form.name.$invalid)' ng-cloak)
                 div(ng-message='required') Por favor, proporciónanos un nombre de contacto
                 div(ng-message='minlength') Tu nombre debe al menos tener dos caracteres
             .form-group
+              input.form-control(ng-model='contact.subject' name='subject' type='text' placeholder='Asunto' required minlength="2")
+              .text-danger(ng-messages="form.subject.$error" role="alert" ng-show='(form.$submitted && !!form.subject.$pristine) || (form.subject.$dirty && form.subject.$invalid)' ng-cloak)
+                div(ng-message='required') Por favor, escribe el asunto de tu mensaje
+                div(ng-message='minlength') El asunto debe al menos tener dos caracteres
+            .form-group
               input.form-control(ng-model='contact.email' name='email' type='email' placeholder='Correo electrónico' required)
-              .text-danger(ng-messages="form.email.$error" role="alert" ng-if='form.email.$dirty && form.email.$invalid' ng-cloak)
+              .text-danger(ng-messages="form.email.$error" role="alert" ng-show='(form.$submitted && !!form.email.$pristine) || (form.email.$dirty && form.email.$invalid)' ng-cloak)
                 div(ng-message='required') Por favor, proporciónanos un correo electrónico
                 div(ng-message='email') Este no es un correo electrónico válido
             .form-group
               textarea.form-control(ng-model='contact.description' name='description' placeholder='Descripción' required minlength="20")
-              .text-danger(ng-messages="form.description.$error" role="alert" ng-if='form.description.$dirty && form.description.$invalid' ng-cloak)
+              .text-danger(ng-messages="form.description.$error" role="alert" ng-show='(form.$submitted && !!form.description.$pristine) || (form.description.$dirty && form.description.$invalid)' ng-cloak)
                 div(ng-message='required, minlength') La descripción debe tener al menos 20 caracteres
             .form-group.text-xs-right
-              input.btn.btn-primary(type='submit' value='Enviar' ng-disabled='ui.disableSubmit || form.$invalid' ng-click='onSubmit()')
+              input.btn.btn-primary(type='submit' value='Enviar' ng-disabled='ui.disableSubmit || (form.$invalid && form.$submitted)')
