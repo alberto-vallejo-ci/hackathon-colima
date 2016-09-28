@@ -1,0 +1,72 @@
+nav#main-menu class="navbar navbar-dark bg-inverse navbar-full"
+  .container
+    a(class="navbar-brand" href="/")
+      = image_tag 'logo.svg'
+    ul class="nav navbar-nav pull-xs-right"
+      li class="nav-item active"
+        .h5
+          = fa_icon 'map-marker'
+          |ITC
+        span
+          = fa_icon 'calendar'
+          |30 Sep, 6:30pm, Sala Audiovisual
+.container#faq
+  .row
+    .col-md-12
+      h1 Preguntas Frecuentes
+      p
+        | A continuación te presentamos una serie de dudas que 
+      article
+        h2 ¿Qué significa Hacking?
+        p
+          | Es el tiempo de innovar, el tiempo que los equipos le dedicarán a su proyecto.
+      article
+        h2 ¿A qué hora puedo llegar el viernes?
+        p
+          | El tiempo que tenemos el viernes es recortado, por lo que les pedimos llegar máximo a las 18:30 horas para poder iniciar la bienvenida en tiempo.
+      article
+        h2 ¿Dónde puedo dejar estacionado mi carro?
+        p
+          | El Instituto Tecnológico de Colima cuenta con 2 espacios de estacionamiento. Uno de ellos se ubica en el costado izquierdo del instituto, el cuál es el más cercano a la Sala Audiovisual.
+          br
+          br
+          | El otro se encuentra en el costado derecho, su acceso es por la calle Amado Nervo, subiendo a 40 metros del semáforo.
+      article
+        h2 ¿Cuál es el programa del evento?
+        = render 'home/agenda'
+      article
+        h2 ¿Qué va a proporcionar HackColima?
+        p
+          | Nosotros les daremos acceso a internet, snacks, café, agua y mentores en cada una de las categorías.
+          br
+          | También proporcionaremos la comida completa del sábado y el domingo.
+      article
+        h2 ¿Debo irme desayunado?
+        p
+          | Sí, HackColima solo dará café, snacks y agua durante el desayuno.
+      article
+        h2 ¿Dónde puedo registrar mi proyecto? ¿Qué pasa si voy solo?
+        p
+          | Para registrar un proyecto debes hacer click en el siguiente link. También podrás registrar tu proyecto el día viernes después de la información general. (Si el link no funciona, puedes copiar y pegar el texto en tu navegador)
+          br
+          br
+          a(target='_blank' href='https://docs.google.com/forms/d/e/1FAIpQLSdykAH4q--G7pN9QghmDphiosK5y1usTiHVZwtWRXgXq77-EA/viewform#response=ACYDBNhW4D5ok2woHdXScMA7gqeCNRK8Xstp1yyoelxkvIwkR7qnrwOIR1VXZAI')
+            |https://docs.google.com/forms/d/e/1FAIpQLSdykAH4q--G7pN9QghmDphiosK5y1usTiHVZwtWRXgXq77-EA/viewform#response=ACYDBNhW4D5ok2woHdXScMA7gqeCNRK8Xstp1yyoelxkvIwkR7qnrwOIR1VXZAI
+          br
+          br
+          | Si te registraste solo, no te preocupes, seguro habrá un proyecto que te necesite.
+      article
+        h2 ¿Qué debo llevar?
+        p
+          | Es necesario llevar algo con qué poder trabajar con el equipo a partir del sábado.
+          br
+          | Los equipos se van a formar a partir del viernes, así que es obligatoria tu asistencia este día para que sepas de qué manera van a trabajar.
+      article
+        h2 ¿Mi idea va a estar protegida?
+        p
+          | HackColima en colaboración con <a href='http://www.solutka.com/'>Solutka</a> está preparando un documento que de fe de la colaboración y la autoría de las ideas.
+          br
+          br
+          | La charla de las 9:30am del sábado "Protección de Ideas" estará a cargo de ellos, quienes contestarán a todas sus preguntas al respecto.
+            
+  
