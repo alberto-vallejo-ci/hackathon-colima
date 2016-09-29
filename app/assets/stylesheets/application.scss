@@ -42,5 +42,20 @@ strong {
   }
 }
 
+.hidden{ display: none !important }
+
+.thanks{
+  font-size: 2em !important;
+  color: map-get($colors, green-light);
+  text-align: center !important;
+  background: none !important;
+  padding: 0 !important;
+  &:hover, &:focus{ color: map-get($colors, green-light); }
+  span{
+    margin: 0 0.4em;
+    font-weight: bold;
+  }
+}
+
 @import 'components/*';
 @import 'application/*';

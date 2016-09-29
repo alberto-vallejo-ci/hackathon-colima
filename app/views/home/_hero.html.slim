@@ -6,7 +6,9 @@ section#hero
       .date
         span Octubre 2016
       .actions
-        script(async src="//widgets.nvite.com/1.5/button.js" data-resource="ae74" data-class='nvite-btn' ng-attr-data-resource="ae74" data-button-text="Registro")
+        a.thanks(href='/informacion')
+          |Gracias!
+          span 144 Hackers registrados!
       = render 'slogan', words: ['Innovación', 'Planeta']
 nav#main-nav(scroll-view-after='#hero')
   .title.col-md-6.col-xs-12
@@ -17,10 +19,9 @@ nav#main-nav(scroll-view-after='#hero')
       = fa_icon 'calendar'
       |30 Sep, 6:30pm, Sala Audiovisual
   .links.col-md-6.col-xs-12
-    .nvite-btn
-      button(class="nvite-rsvp-widget-button nvite-button-custom")
-        |Registro
-        i(class="fa fa-plus-circle")
+    a.thanks(href='/informacion')
+      |Gracias!
+      span 144 Hackers registrados!
     ul.social
       li.facebook
         a(href='//facebook.com/HackColima' target='_blank')
