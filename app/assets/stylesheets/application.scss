@@ -52,6 +52,7 @@ strong {
   padding: 0 !important;
   &:hover, &:focus{ color: map-get($colors, green-light); }
   span{
+    display: block;
     margin: 0 0.4em;
     font-weight: bold;
   }
